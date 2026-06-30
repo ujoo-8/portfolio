@@ -1,0 +1,563 @@
+/* 1. 화면 하단 고정을 위한 기본 설정 */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #fbf9f4;
+}
+
+/* 2. Flexbox를 활용해 footer를 아래로 밀어내기 */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+header {
+    width: 100%;
+    max-width: 144rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 15rem 0 2rem;
+    outline: 0;
+}
+
+header .home {
+    display: block;
+    font-size: 2rem;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.6rem;
+}
+
+header h1 {
+    font-size: 3.6rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+header .inner li {
+    /* font-size: 1.7rem; */
+    line-height: 1.6;
+}
+header .inner li:last-child {
+    font-family: 'Pretendard';
+}
+.work-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+}
+.work-info dl {
+    display: flex;
+    flex-direction: row;
+}
+.work-info dt,
+.work-info dd {
+    display: inline-block;
+}
+.work-info dl dt {
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}
+.work-info dt::after {
+    content: ' : ';
+    display: inline-block;
+    margin-right: 0.6rem;
+    padding-left: 0.6rem;
+}
+.work-info dl dd {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+.work-info dl dt:last-child {
+    margin-left: 1.6rem;
+    display: block;
+    border: 1px solid;
+}
+header .inner .btn-area {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+}
+.link::after {
+    /* content: '↗'; */
+    display: block;
+    content: '';
+    background: url(../images/i-link.svg) no-repeat center;
+    background-size: contain;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.list::after {
+    /* content: '☰';  */
+    display: block;
+    content: '';
+    background: url(../images/i-menu-000.svg) no-repeat center;
+    background-size: contain;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+
+
+
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 인디케이터의 기준점 */
+  list-style: none;
+  padding: 0;
+  background-color: var(--white);
+  border-radius: 99px;
+  padding: 0.3rem 0.6rem;
+  /* border: 2px solid #e7e0d4; */
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--black);
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.tab-btn:hover {
+    color: var(--white);
+}
+/* 움직이는 인디케이터 (배열/약간 둥근 알약 모양 예시) */
+.nav-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 82px;
+  background-color: var(--primary);
+  border-radius: 99px;
+  z-index: 0;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
+  pointer-events: none;
+  height: 3.8rem;
+}
+
+.tab-btn.active {
+  color: var(--white) !important;
+  height: 3.8rem;
+  background-color: var(--primary);
+  border-radius: 999px;
+  position: relative;
+  z-index: 2;
+}
+.filter-buttons :not(:hover) .tab-btn.active {
+  color: var(--white); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메인 콘텐츠 영역 (남은 공간을 다 차지함) */
+.content-wrapper {
+    flex: 1;
+    /* 이 속성이 footer를 화면 맨 아래로 밀어냅니다 */
+    width: 100%;
+    height: 32.2rem;
+    display: flex;
+    align-items: end;
+    padding: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 8rem;
+}
+
+/* 3. Splide 트랙이 화면 끝까지 100% 확장되도록 보장 */
+.splide {
+    width: 100%;
+    overflow: visible !important;
+    /* ◀ 중요: 슬라이드가 화면 밖 우측에서도 끊기지 않고 대기하도록 허용 */
+}
+
+.splide__track {
+    overflow: visible !important;
+    /* ◀ 중요: 복제된 slide(clones)들이 잘리지 않고 부드럽게 이어지게 만듦 */
+    width: 100%;
+}
+
+
+.splide__list {
+    padding-left: 80px;
+    /* 첫 번째 카드가 헤더 글자 라인과 맞도록 시작 여백*/
+}
+
+.splide__slide {
+    position: relative;
+    width: 30rem;
+    height: 36rem;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.splide__slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.splide__slide a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* 부드럽게 나타나는 효과 */
+}
+
+.splide__slide .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    /* transform: translateY(2rem); */
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================
+   핵심: 마우스 HOVER 시 작동하는 스타일
+========================================= */
+.splide__slide:hover {
+    transform: translateY(-20px);
+    /* 위로 8px 이동 */
+    /* box-shadow: 0 20px 38px rgba(0, 0, 0, 0.06), 0 15px 12px rgba(0, 0, 0, 0.04); */
+}
+
+.splide__slide:hover a {
+    opacity: 1;
+    /* 딤처리 레이어 등장 */
+}
+
+.splide__slide:hover .info h3,
+p {
+    transform: translateY(0);
+}
+
+.splide__slide:hover img {
+    transform: scale(1.05);
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+}
+
+
+
+
+
+
+.tab-content {
+    display: none;  
+}
+
+.tab-content.active {
+  display: block;
+  display: flex;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+    max-width: 144rem;
+    margin: 0 auto;
+}
+
+.item {
+    position: relative;
+    width: 34.2rem;
+    height: 30.6rem;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* 부드럽게 나타나는 효과 */
+}
+
+.item .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    /* transform: translateY(2rem); */
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+
+.item:hover a {
+    opacity: 1;
+}
+
+.item:hover img {
+    transform: scale(1.05);
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+}
+
+
+/* .tab-3 .item {
+    width: 34.2rem;
+    height: 14rem;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 3. 풋터 스타일 및 PORTFOLIO 글자 반만 가리기 */
+footer {
+    position: relative;
+    width: 100%;
+    background-color: #fbf9f4;
+    padding: 5.4rem 0;
+    /* 카피라이트 텍스트 배치용 패딩 */
+    box-sizing: border-box;
+    overflow: hidden;
+    /* ◀ 중요: 화면 밑으로 나간 글자 절반을 잘라버림 */
+}
+
+.copyright {
+    max-width: 144rem;
+    position: relative;
+    z-index: 2;
+    font-size: 1.4rem;
+    margin: 0 auto;
+}
+
+/* 배경에 깔리는 거대한 PORTFOLIO 텍스트 정의 */
+.bg-text {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    /* 우선 바닥에 붙이고 */
+    transform: translate(-50%, 50%);
+    /* ◀ 핵심: 자기 자신 높이의 50%만큼 정확히 바닥 밑으로 내려서 숨김 */
+    font-size: 18vw;
+    /* 화면 너비에 비례해 거대하게 조절 (Responsive) */
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #f2eee5;
+    z-index: 1;
+    white-space: nowrap;
+    line-height: 1;
+    /* 불필요한 행간 공백 제거 */
+    pointer-events: none;
+    /* 글자가 마우스 클릭을 방해하지 않도록 처리 */
+}
+
+
+
+
+
+
+
+
+.none {
+    display: none;
+}
+
+
+
+
+/*-----------------------------------------------------------------
+sub
+-----------------------------------------------------------------*/
+.sub-content-wrapper {
+    max-width: 144rem;
+    margin: 3rem auto 7rem;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.sub-content-wrapper h2 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+}
+
+.sub-content-wrapper img {
+    width: 100%;
+}
+
+.sub-content-wrapper .mobile {
+    max-width: 39.3rem;
+}
+
+
+
+
+@media (max-width:1440px) {
+    header {
+        width: 94%;
+    }
+    .copyright {
+        width: 94%;
+    }
+    .sub-content-wrapper {
+        width: 94%;
+    }
+}
+
+@media (max-width:1024px) {
+    header {
+        width: 92%;
+        padding: 4rem 0 3rem;
+    }
+    header .inner{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.6rem;
+    }
+    header .inner .work-info {
+        margin-top: 1rem;
+    }
+    .nav-container {
+        width: 100%;
+    }
+    .tab-btn {
+        flex: 1;
+        padding: 0;
+    }
+
+    .content-wrapper {
+        margin-bottom: 0;
+    }
+    .tab-content {
+        width: 92%;
+    }
+    .tab-content.active {
+        gap: 1.6rem;
+    }
+    .item {
+        width: 49%;
+    }
+    .tab-3 .item {
+        width: 100%;
+    }
+    footer {
+        padding: 5rem 0;
+    }
+    .copyright {
+        width: 92%;
+    }
+    .sub-content-wrapper {
+        width: 92%;
+        margin-bottom: 0;
+        gap: 3rem;
+    }
+
+}
+
+
+
+@media (max-width:767px) {
+    .item {
+        width: 100%;
+    }
+    .sub-content-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    .sub-content-wrapper .pc {
+        display: none;
+    }
+}
+
+@media (max-width:590px) {
+    header h1 {
+        font-size: 3rem;
+        line-height: 1.3;
+    }
+    .work-info {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+}

@@ -1,0 +1,145 @@
+/* ==========================================================================
+   1. 전체 초기화 및 박스 모델 설정
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box; /* 중복 선언 제거 및 통일 */
+  word-break: keep-all;   /* 한글 줄바꿈 시 단어 단위로 예쁘게 떨어지게 설정 */
+  -webkit-text-size-adjust: none; /* 모바일 가로 전환 시 폰트 강제 확대 방지 */
+}
+
+/* ==========================================================================
+   2. HTML & 문서 기본 뼈대 세팅 (가장 중요)
+   ========================================================================== */
+html {
+  /* font-size: 62.5% 설정을 통해 1rem = 10px 공식이 성립됩니다. */
+  font-size: 62.5%; 
+  scroll-behavior: smooth; /* 앵커 이동 시 부드러운 스크롤 */
+}
+
+body {
+  /* T2 TRAVEL 시안에 맞춰 폰트 및 기본 세팅 */
+  font-family:  "Lato", 'Pretendard', sans-serif !important; 
+  font-weight: 400;
+  font-size: 1.6rem; /* 16px로 기본 본문 크기 지정 */
+  line-height: 1.5;
+  text-align: left;
+  letter-spacing: normal;
+  color: var(--gray800); /* 변수가 없을 때를 대비한 기본값 fallback 추가 */
+  background-color: transparent;
+}
+
+/* ==========================================================================
+   3. 멀티미디어 & 양식(Form) 요소 버그 방지
+   ========================================================================== */
+img, fieldset, iframe { 
+  border: none 0; 
+}
+
+img {
+  display: block;   /* 이미지 하단 미세 공백(3~4px) 제거 */
+  max-width: 100%;  /* 부모 박스 밖으로 삐져나가는 것 방지 */
+  height: auto;     /* 비율 유지 */
+}
+
+table, div { 
+  border-collapse: collapse; 
+}
+
+table {
+  border-spacing: 0;
+}
+
+textarea { 
+  overflow: auto; 
+  outline-style: none; 
+  resize: vertical; /* 실무 팁: 가로로 늘어나서 레이아웃 터지는 것 방지 */
+}
+
+select, input, img, li { 
+  vertical-align: middle; 
+  text-align: left; 
+  outline-style: none;
+}
+
+/* ==========================================================================
+   4. 시맨틱 태그 고유 스타일 초기화
+   ========================================================================== */
+ul, li, ol { 
+  list-style: none; 
+}
+
+/* 주소, 강조, 인용구 등의 기본 기울임(Italic) 해제 */
+address, caption, cite, code, dfn, em, th, var, i { 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+/* 스크린 리더 접근성을 위해 숨김 처리 기법 적용할 수 있도록 세팅 */
+legend, caption { 
+  display: none; 
+}
+
+hr { 
+  display: none; 
+}
+
+/* 인용 부호 제거 */
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* ==========================================================================
+   5. 링크(Anchor) 및 기타 인터랙션 설정
+   ========================================================================== */
+a {
+  text-decoration: none; 
+  cursor: pointer; 
+  color: inherit; /* 부모 글자 색상 그대로 상속 */
+}
+
+:focus {
+  outline: 0;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+button {
+	background-color: transparent;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
