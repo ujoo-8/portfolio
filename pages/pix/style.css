@@ -292,7 +292,7 @@
         }
 
 
-        @media (min-width:768px) {
+        @media (min-width:767px) {
             .wrap {
                 max-width: 79rem;
                 margin: 0 auto;
