@@ -111,17 +111,16 @@ header .inner .btn-area {
 
 
 
-.filter-buttons {
+.tab-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   position: relative; /* 인디케이터의 기준점 */
   list-style: none;
   padding: 0;
   background-color: var(--white);
-  border-radius: 99px;
+  border-radius: 9rem;
   padding: 0.3rem 0.6rem;
- width: 100%;
 }
 
 .tab-btn {
@@ -131,16 +130,19 @@ header .inner .btn-area {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
+  flex: 1;
+  padding: 1.2rem 2rem;
   text-decoration: none;
   color: var(--black);
   font-family: 'Pretendard';
   font-weight: 400;
   font-size: 1.4rem;
+  white-space: nowrap;
   transition: color 0.3s;
   cursor: pointer;
   position: relative;
   z-index: 1;
+  flex-shrink: 0;
 }
 .tab-btn:hover {
     color: var(--white);
@@ -164,11 +166,11 @@ header .inner .btn-area {
   color: var(--white) !important;
   height: 3.8rem;
   background-color: var(--primary);
-  border-radius: 999px;
+  border-radius: 9rem;
   position: relative;
   z-index: 2;
 }
-.filter-buttons :not(:hover) .tab-btn.active {
+.tab-container:not(:hover) .tab-btn.active {
   color: var(--white); 
 }
 
@@ -499,8 +501,8 @@ sub
     header .inner .work-info {
         margin-top: 1rem;
     }
-    .nav-container {
-        width: 100%;
+    .tab-container {
+        width: 50%;
     }
     .tab-btn {
         flex: 1;
@@ -539,6 +541,9 @@ sub
 
 
 @media (max-width:767px) {
+    .tab-container {
+        width: 100%;
+    }
     .item {
         width: 100%;
     }
