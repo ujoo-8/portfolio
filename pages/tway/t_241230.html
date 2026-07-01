@@ -140,14 +140,19 @@
         </div>
         <div class="section2">
             <div class="title">
-                <h3>여기어때 쿠폰코드 <span class="mo">이렇게 사용하세요</span></h3>
+                <h3>여기어때 쿠폰코드 이렇게 사용하세요</h3>
                 <div class="stxt">
-                    <div class="btn"><span>숙소 할인받기</span></div>
-                    버튼 클릭 시, <span class="mo">&nbsp;쿠폰 등록 페이지로 바로 이동할 수 있어요</span>
+                    <div class="btn">
+                        <span>숙소 할인받기</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 20.5H22M12 6.5V3.5M12 3.5H9.5M12 3.5H14.5M3.052 14.775C3.519 14.479 3.993 14.05 4.062 13.502C4.30603 11.5689 5.24708 9.79127 6.70857 8.50268C8.17007 7.21408 10.0516 6.50308 12 6.50308C13.9484 6.50308 15.8299 7.21408 17.2914 8.50268C18.7529 9.79127 19.694 11.5689 19.938 13.502C20.007 14.05 20.481 14.479 20.948 14.775C21.361 15.037 21.661 15.467 21.747 15.98L22 17H2L2.253 15.98C2.29399 15.7341 2.38644 15.4997 2.5243 15.2921C2.66216 15.0844 2.84133 14.9082 3.052 14.775Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p>버튼 클릭 시, 쿠폰 등록 페이지로 <span class="br"></span>바로 이동할 수 있어요</p>
                 </div>
             </div>
 
-            <div class="swiper mySwiper step">
+            <div class="swiper stepSwiper">
                 <ol class="swiper-wrapper">
                     <li class="swiper-slide">
                         <div>
@@ -207,14 +212,15 @@
 		
 	});
 
-    var swiper = new Swiper(".step", {
+
+    var swiper = new Swiper(".stepSwiper", {
         slidesPerView: 1,
         spaceBetween: 0,
         // slidesOffsetBefore: 16, 
         // slidesOffsetAfter: 16, 
         loop: false,
         breakpoints: {
-            769: {
+            750: {
                 slidesPerView: 3,
                 spaceBetween: 24, 
                 slidesOffsetBefore: 0,
@@ -226,7 +232,73 @@
         prevEl: ".swiper-button-prev",
       },
     });
+    // var swiper = new Swiper(".stepSwiper", {
+    //     slidesPerView: 1,
+    //     spaceBetween: 0,
+    //     // slidesOffsetBefore: 16, 
+    //     // slidesOffsetAfter: 16, 
+    //     loop: false,
+    //     breakpoints: {
+    //         767: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 24, 
+    //             slidesOffsetBefore: 0,
+    //             slidesOffsetAfter: 0,
+    //         },
+    //         820: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 40, 
+    //             slidesOffsetBefore: 0,
+    //             slidesOffsetAfter: 0,
+    //         },
+    //         1024: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 60, 
+    //             slidesOffsetBefore: 0,
+    //             slidesOffsetAfter: 0,
+    //         },
+    //     },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+    // });
 </script>
+
+
+<!-- <script>
+    var swiper = new Swiper('.stepSwiper', {
+    slidesPerView: 1,
+        spaceBetween: 0,
+        // slidesOffsetBefore: 16, 
+        // slidesOffsetAfter: 16, 
+        loop: false,
+    breakpoints: {
+            767: {
+                slidesPerView: 3,
+                spaceBetween: 24, 
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+            },
+            820: {
+                slidesPerView: 3,
+                spaceBetween: 40, 
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+            },
+            1025: {
+                slidesPerView: 3,
+                spaceBetween: 60, 
+                slidesOffsetBefore: 0,
+                slidesOffsetAfter: 0,
+            },
+        },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    });
+</script> -->
 
 </body>
 </html>
