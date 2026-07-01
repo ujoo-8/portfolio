@@ -18,7 +18,7 @@
                     <li>Photoshop, Figma, Illustrator, Visual Studio Code, HTML/CSS, Responsive, Swiper, Bootstrap.</li>
                     <li>방문해주셔서 감사합니다.</li>
                 </ul>
-                <ul class="filter-buttons" role="tablist" aria-label="포트폴리오 카테고리">
+                <ul class="tab-container" role="tablist" aria-label="포트폴리오 카테고리">
                     <button type="button" role="tab" aria-selected="true" aria-controls="portfolio-grid" class="tab-btn active">전체보기</button>
                     <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">반응형 퍼블리싱</button>
                     <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">웹디자인</button>
@@ -171,7 +171,7 @@
     }
 
     // 2. 탭 및 인디케이터 제어
-    const tabList = document.querySelector('.filter-buttons'); 
+    const tabList = document.querySelector('.tab-container'); 
     const tabs = document.querySelectorAll('.tab-btn');
     const indicator = document.querySelector('.nav-indicator');
     const contents = document.querySelectorAll('.tab-content');
