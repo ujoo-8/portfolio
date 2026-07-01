@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wander - 여행을 떠나보세요</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <header class="fixed-top d-flex justify-content-between align-items-center py-md-3 main-header">
+        <div class="container inner">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <a href="#" class="d-flex justify-content-center align-items-center logo">
+                        <svg width="86" height="18" viewBox="0 0 86 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path
+                                d="M4.85156 16.9688L0 0H3.84375L6.70312 11.8594H6.84375L9.96094 0H13.2656L16.3828 11.8828H16.5234L19.3828 0H23.2266L18.375 16.9688H14.9297L11.6953 5.76562H11.5547L8.29688 16.9688H4.85156ZM22.5122 13.4062C22.5239 10.5703 24.7973 9.64453 27.2466 9.49219C28.1606 9.43359 29.8716 9.35156 30.4106 9.32812V8.29688C30.3989 7.23047 29.6723 6.62109 28.3716 6.60938C27.188 6.62109 26.4497 7.14844 26.2622 8.01562H22.9575C23.1684 5.8125 25.0903 4.07812 28.4653 4.07812C31.2427 4.07812 33.8677 5.32031 33.8559 8.39062V16.9688H30.5747V15.2109H30.4809C29.8598 16.3828 28.6411 17.2148 26.7544 17.2031C24.3169 17.2148 22.5239 15.9258 22.5122 13.4062ZM25.8403 13.3125C25.8403 14.2852 26.6255 14.8008 27.7388 14.8125C29.3208 14.8008 30.4223 13.7695 30.4106 12.4219V11.4961C29.8833 11.5195 28.395 11.6016 27.8091 11.6484C26.602 11.7539 25.8403 12.3281 25.8403 13.3125ZM39.4931 9.60938V16.9688H36.0244V4.24219H39.3291V6.46875H39.4697C40.0439 5.00391 41.4033 4.07812 43.29 4.07812C45.9502 4.07812 47.6845 5.89453 47.6728 8.85938V16.9688H44.2275V9.46875C44.2158 7.89844 43.372 6.96094 41.9306 6.96094C40.4892 6.96094 39.4931 7.93359 39.4931 9.60938ZM54.5756 17.1797C51.6694 17.1797 49.3959 14.8711 49.3959 10.6172C49.3959 6.25781 51.7631 4.07812 54.5756 4.07812C56.7084 4.07812 57.728 5.34375 58.185 6.375H58.3022V0H61.7709V16.9688H58.3491V14.9297H58.185C57.7045 15.9844 56.6498 17.1797 54.5756 17.1797ZM52.9584 10.5938C52.9467 12.8438 53.8959 14.4023 55.6538 14.4141C57.3881 14.4023 58.3725 12.8906 58.3725 10.5938C58.3725 8.30859 57.3998 6.84375 55.6538 6.84375C53.8842 6.84375 52.9467 8.37891 52.9584 10.5938ZM69.8456 17.2266C65.9433 17.2148 63.5527 14.6953 63.5644 10.6641C63.5527 6.73828 65.9784 4.07812 69.705 4.07812C73.0448 4.07812 75.6816 6.1875 75.6816 10.5234V11.5078H66.9863C66.9863 13.4297 68.123 14.6133 69.9159 14.625C71.0995 14.6133 71.9433 14.0977 72.2831 13.3359H75.5878C75.0956 15.6914 72.9863 17.2148 69.8456 17.2266ZM66.9863 9.32812H72.4003C72.3886 7.78125 71.3222 6.66797 69.7753 6.67969C68.1816 6.66797 67.0566 7.86328 66.9863 9.32812ZM77.3812 16.9688V4.24219H80.7328V6.44531H80.8734C81.3305 4.88672 82.5141 4.05469 83.9437 4.05469C84.2953 4.05469 84.7406 4.10156 85.0453 4.17188V7.26562C84.7172 7.16016 84.0492 7.07812 83.5687 7.07812C81.9984 7.07812 80.8383 8.16797 80.85 9.72656V16.9688H77.3812Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <div class="d-none d-md-flex">
+                        <nav class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="d-block">여행</a>
+                            <a href="#" class="d-block">숙소</a>
+                            <a href="#" class="d-block">에어텔</a>
+                            <a href="#" class="d-block">FIT단독</a>
+                            <a href="#" class="d-block">현지투어티켓</a>
+                            <a href="#" class="d-block">여행정보</a>
+                        </nav>
+                    </div>
+                    <div class="d-flex flex-row gap-4">
+                        <button type="button" class="btn p-0 ico i-search" data-bs-toggle="offcanvas"
+                            data-bs-target="#searchSidebar">
+                            <span class="visually-hidden">검색창 열기</span>
+                        </button>
+                        <button type="button" class="btn p-0 ico i-user">
+                            <span class="visually-hidden">로그인</span>
+                        </button>
+                        <button type="button" class="btn p-0 ico i-menu" data-bs-toggle="offcanvas"
+                            data-bs-target="#responsiveMenu">
+                            <span class="visually-hidden">전체 메뉴</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="main-visual-container d-flex align-items-end">
+        <img src="./images/bg-main-visual-1.webp" alt="">
+        <div class="container mb-5 search-area">
+            <div class="row justify-content-center">
+                <div class="col-11 col-md-8 col-lg-6">
+                    <div class="search-bar-box d-flex justify-content-between align-items-center px-4 py-2">
+                        <form class="d-flex w-100 align-items-center" role="search" action="">
+                            <input type="search" class="form-control" placeholder="어디로 떠나볼까요?" aria-label="Search" />
+                            <button class="btn p-0 border-0" type="submit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M21.0004 21L16.6504 16.65" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="content-wrapper d-flex flex-column">
+        <section class="air container-fluid">
+            <div class="row d-flex flex-xl-row align-items-center align-items-xl-stretch justify-content-between">
+                <div class="col-12 col-md-12 col-xl-9 flight-area">
+                    <div class="col-12">
+                        <h2>놀라운 가격 <span class="br"></span>금액대별 항공권 비교</h2>
+                    </div>
+                    <div class="col-12 scroll-container">
+                        <div class="col-12 scroll-wrapper" role="tablist" aria-label="금액대별 항공권 비교">
+                            <button type="button" role="tab" id="tab-price-20" aria-controls="panel-price-20" aria-selected="true" class="tab-style active">20만원 대</button>
+                            <button type="button" role="tab" id="tab-price-30" aria-controls="panel-price-30" aria-selected="false" class="tab-style">30만원 대</button>
+                            <button type="button" role="tab" id="tab-price-40" aria-controls="panel-price-40" aria-selected="false" class="tab-style">40만원 이상</button>
+                            <button type="button" role="tab" id="tab-price-80" aria-controls="panel-price-80" aria-selected="false" class="tab-style">80만원 이상</button>
+                        </div>
+                    </div>
+                    <div class="col-12 active tabpanel" id="panel-price-20" role="tabpanel" aria-labelledby="tab-price-20">
+                        <div class="swiper flightPriceSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="airticket-card">
+                                        <a href="#">
+                                            <p class="route">서울 - 프랑크푸르트</p>
+                                            <p class="desc">7.22(수)-7.31(월)&nbsp;&nbsp;ㆍ&nbsp;&nbsp;왕복</p>
+                                            <p class="price"><b>933,500</b>~</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="airticket-card">
+                                        <a href="#">
+                                            <p class="route">서울 - 보르도</p>
+                                            <p class="desc">7.22(수)-7.31(월)&nbsp;&nbsp;ㆍ&nbsp;&nbsp;왕복</p>
+                                            <p class="price"><b>1,374,300</b>~</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="airticket-card">
+                                        <a href="#">
+                                            <p class="route">서울 - 나폴리</p>
+                                            <p class="desc">7.22(수)-7.31(월)&nbsp;&nbsp;ㆍ&nbsp;&nbsp;왕복</p>
+                                            <p class="price"><b>1,502,500</b>~</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="airticket-card">
+                                        <a href="#">
+                                            <p class="route">서울 - 요코하마</p>
+                                            <p class="desc">7.22(수)-7.31(월)&nbsp;&nbsp;ㆍ&nbsp;&nbsp;왕복</p>
+                                            <p class="price"><b>1,502,500</b>~</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="airticket-card">
+                                        <a href="#">
+                                            <p class="route">서울 - 나폴리</p>
+                                            <p class="desc">7.22(수)-7.31(월)&nbsp;&nbsp;ㆍ&nbsp;&nbsp;왕복</p>
+                                            <p class="price"><b>1,502,500</b>~</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="airticket-card">
+                                        <a href="#">
+                                            <p class="route">서울 - 나폴리</p>
+                                            <p class="desc">7.22(수)-7.31(월)&nbsp;&nbsp;ㆍ&nbsp;&nbsp;왕복</p>
+                                            <p class="price"><b>1,502,500</b>~</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" aria-label="다음 슬라이드" role="button">
+                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M0.75 12.75L6.75 6.75L0.75 0.75" stroke="white" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="swiper-button-prev" aria-label="이전 슬라이드" role="button">
+                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M0.75 12.75L6.75 6.75L0.75 0.75" stroke="white" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 tabpanel" id="panel-price-30" role="tabpanel" aria-labelledby="tab-price-30"></div>
+                    <div class="col-12 tabpanel" id="panel-price-40" role="tabpanel" aria-labelledby="tab-price-40"></div>
+                    <div class="col-12 tabpanel" id="panel-price-80" role="tabpanel" aria-labelledby="tab-price-80"></div>
+                </div>
+                <div class="col-12 col-xl-3 d-flex">
+                    <div class="swiper airbnSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <!-- <source media="(max-width:1024px)" srcset="images/bn-air1-mobile.webp"> -->
+                                        <!-- <source media="(max-width:650px)" srcset="images/bn-air1-mobile.webp"> -->
+                                        <source media="(max-width:650px)" srcset="images/bn-air1-mobile.webp">
+                                        <source media="(max-width:1199px)" srcset="images/bn-air1-tablet.webp">
+                                        <img src="./images/bn-air1.webp" class="img-fluid" alt="항공권 단독 특가 프로모션 배너">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <!-- <source media="(max-width:650px)" srcset="images/bn-air2-mobile.webp"> -->
+                                        <!-- <source media="(max-width:1024px)" srcset="images/bn-air2-mobile.webp"> -->
+                                        <source media="(max-width:650px)" srcset="images/bn-air2-mobile.webp">
+                                        <source media="(max-width:1199px)" srcset="images/bn-air2-tablet.webp">
+                                        <img src="./images/bn-air2.webp" class="img-fluid" alt="항공권 단독 특가 프로모션 배너">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="eventSwiper-pagination"></div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="weekly-best container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h2>주간 인기 <span class="br"></span>투어&amp;티켓 BEST</h2>
+                </div>
+                <div class="col-12">
+                    <div class="col-12 scroll-container">
+                        <div class="col-12 scroll-wrapper" role="tablist" aria-label="주간 인기 투어 지역 선택">
+                            <button type="button" role="tab" id="tab-tour-all" aria-controls="panel-tour-all" aria-selected="true" class="tab-style active">전체</button>
+                            <button type="button" role="tab" id="tab-tour-paris" aria-controls="panel-tour-paris" aria-selected="false" class="tab-style">파리</button>
+                            <button type="button" role="tab" id="tab-tour-osaka" aria-controls="panel-tour-osaka" aria-selected="false" class="tab-style">오사카</button>
+                            <button type="button" role="tab" id="tab-tour-fukuoka" aria-controls="panel-tour-fukuoka" aria-selected="false" class="tab-style">후쿠오카</button>
+                            <button type="button" role="tab" id="tab-tour-barcelona" aria-controls="panel-tour-barcelona" aria-selected="false" class="tab-style">바르셀로나</button>
+                            <button type="button" role="tab" id="tab-tour-hawaii" aria-controls="panel-tour-hawaii" aria-selected="false" class="tab-style">하와이</button>
+                            <button type="button" role="tab" id="tab-tour-singapore" aria-controls="panel-tour-singapore" aria-selected="false" class="tab-style">싱가포르</button>
+                            <button type="button" role="tab" id="tab-tour-london" aria-controls="panel-tour-london" aria-selected="false" class="tab-style">런던</button>
+                            <button type="button" role="tab" id="tab-tour-chicago" aria-controls="panel-tour-chicago" aria-selected="false" class="tab-style">시카고</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 active tabpanel" id="panel-tour-all" role="tabpanel" aria-labelledby="tab-tour-all">
+                    <div class="swiper bestItemSwiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide item">
+                                <a class=" d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">1</span>
+                                        <img src="./images/prod-best2.webp" alt="파리 디즈니랜드 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">꿈과 환상의 나라, 파리 디즈니랜드®에서 만나는 마법 같은 순간</div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rating">4.9</span>
+                                            <span class="desc">(10개)</span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rate">
+                                                <span class="visually-hidden">할인율</span>
+                                                <b>10</b>%
+                                            </span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </div>
+                                        <div class="price"><b>83,145</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">2</span>
+                                        <img src="./images/prod-best1.webp" alt="루브르 박물관 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">루브르 박물관 공인 가이드 투어 [한국인 가이드]</div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                5
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (12개)
+                                            </span>
+                                        </div>
+                                        <div class="price"><b>59,800</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">3</span>
+                                        <img src="./images/prod-best4.webp" alt="프랑스 파리 오르세 미술관 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">프랑스 파리 오르세 미술관 입장권</div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4.6
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (1,875개)
+                                            </span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rate">
+                                                <span class="visually-hidden">할인율</span>
+                                                <b>10</b>%
+                                            </span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </div>
+                                        <div class="price"><b>29,256</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a class=" d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">4</span>
+                                        <img src="./images/prod-best3.webp" alt="파리 세느강 바토 파리지앵 크루즈 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">[즉시확정] 파리 세느강 바토 파리지앵 크루즈 탑승권</div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                5
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (8개)
+                                            </span>
+                                        </div>
+                                        <div class="price"><b>10,364</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a class=" d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">5</span>
+                                        <img src="./images/prod-best5.webp" alt="빅버스 홉온 홉오프 시티 투어 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">파리의 낭만을 싣고 달리는 빅버스 홉온 홉오프 시티 투어</div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (14개)
+                                            </span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rate">
+                                                <span class="visually-hidden">할인율</span>
+                                                <b>10</b>%
+                                            </span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </div>
+                                        <div class="price"><b>29,256</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a class=" d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">6</span>
+                                        <img src="./images/prod-best6.webp" alt="바토 파리지앵 미식 크루즈 런치/디너 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">파리 세느강의 낭만, 바토 파리지앵 미식 크루즈 런치/디너</div>
+                                        <!-- <div class="d-flex flex-column align-items-center gap-2">
+                                                <span class="rating">
+                                                    <span class="visually-hidden">평점 5점 만점에</span>
+                                                    4.6
+                                                </span>
+                                                <span class="desc">
+                                                    <span class="visually-hidden">리뷰 수</span>
+                                                    (1,875개)
+                                                </span>
+                                            </div> -->
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rate">
+                                                <span class="visually-hidden">할인율</span>
+                                                <b>10</b>%
+                                            </span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </div>
+                                        <div class="price"><b>70,318</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">7</span>
+                                        <img src="./images/prod-best2.webp" alt="파리 디즈니랜드 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">꿈과 환상의 나라, 파리 디즈니랜드®에서 만나는 마법 같은 순간</div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4.9
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (10개)
+                                            </span>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rate">
+                                                <span class="visually-hidden">할인율</span>
+                                                <b>10</b>%
+                                            </span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </div>
+                                        <div class="price"><b>83,145</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <div class="thumb">
+                                        <span class="ranking">8</span>
+                                        <img src="./images/prod-best1.webp" alt="루브르 박물관 이미지">
+                                    </div>
+                                    
+                                    <div class="info d-flex flex-column">
+                                        <div class="name">루브르 박물관 공인 가이드 투어 [한국인 가이드]</div>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                5
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (12개)
+                                            </span>
+                                        </div>
+                                        <div class="price"><b>59,800</b>원</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="swiper-button-next" aria-label="다음 슬라이드">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M0.75 12.75L6.75 6.75L0.75 0.75" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="swiper-button-prev" aria-label="이전 슬라이드">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M0.75 12.75L6.75 6.75L0.75 0.75" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 tabpanel" id="panel-tour-paris" role="tabpanel" aria-labelledby="tab-tour-paris"></div>
+                <div class="col-12 tabpanel" id="panel-tour-osaka" role="tabpanel" aria-labelledby="tab-tour-osaka"></div>
+                <div class="col-12 tabpanel" id="panel-tour-fukuoka" role="tabpanel" aria-labelledby="tab-tour-fukuoka"></div>
+                <div class="col-12 tabpanel" id="panel-tour-barcelona" role="tabpanel" aria-labelledby="tab-tour-barcelona"></div>
+                <div class="col-12 tabpanel" id="panel-tour-hawaii" role="tabpanel" aria-labelledby="tab-tour-hawaii"></div>
+                <div class="col-12 tabpanel" id="panel-tour-singapore" role="tabpanel" aria-labelledby="tab-tour-singapore"></div>
+                <div class="col-12 tabpanel" id="panel-tour-london" role="tabpanel" aria-labelledby="tab-tour-london"></div>
+                <div class="col-12 tabpanel" id="panel-tour-chicago" role="tabpanel" aria-labelledby="tab-tour-chicago"></div>
+            </div>
+        </section>
+
+        <section class="event container-fluid">
+            <h2 class="visually-hidden">진행 중인 이벤트 배너</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="swiper eventSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(max-width:650px)" srcset="./images/bn-event1-mobile.webp">
+                                        <source media="(max-width:767px)" srcset="./images/bn-event1-tablet.webp">
+                                        <img src="./images/bn-event1.webp" class="img-fluid" alt="총 $60 썸머쿠폰팩 증정">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(max-width:650px)" srcset="./images/bn-event2-mobile.webp">
+                                        <source media="(max-width:767px)" srcset="./images/bn-event2-tablet.webp">
+                                        <img src="./images/bn-event2.webp" class="img-fluid" alt="총 $60 썸머쿠폰팩 증정">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- <div class="eventSwiper-pagination"></div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hotel container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h2>실시간! <span class="br"></span>호텔 타임 세일 모음</h2>
+                </div>
+                <div class="col-12">
+                    <div class="col-12 scroll-container">
+                        <div class="col-12 scroll-wrapper" role="tablist" aria-label="실시간 호텔 타임 세일 모음">
+                            <button type="button" role="tab" id="tab-hotel-vietnam" aria-controls="panel-hotel-vietnam" aria-selected="true" class="tab-style active">베트남</button>
+                            <button type="button" role="tab" id="tab-hotel-cancun" aria-controls="panel-hotel-cancun" aria-selected="false" class="tab-style">칸쿤</button>
+                            <button type="button" role="tab" id="tab-hotel-spain" aria-controls="panel-hotel-spain" aria-selected="false" class="tab-style">스페인</button>
+                            <button type="button" role="tab" id="tab-hotel-japan" aria-controls="panel-hotel-japan" aria-selected="false" class="tab-style">일본</button>
+                            <button type="button" role="tab" id="tab-hotel-hawaii" aria-controls="panel-hotel-hawaii" aria-selected="false" class="tab-style">하와이</button>
+                            <button type="button" role="tab" id="tab-hotel-singapore" aria-controls="panel-hotel-singapore" aria-selected="false" class="tab-style">싱가포르</button>
+                            <button type="button" role="tab" id="tab-hotel-london" aria-controls="panel-hotel-london" aria-selected="false" class="tab-style">런던</button>
+                            <button type="button" role="tab" id="tab-hotel-chicago" aria-controls="panel-hotel-chicago" aria-selected="false" class="tab-style">시카고</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 active tabpanel" id="panel-hotel-vietnam" role="tabpanel" aria-labelledby="tab-hotel-vietnam">
+                    <div class="swiper timeSaleSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel1.webp" alt="신라 모노그램 다낭 호텔 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">신라 모노그램 다낭</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">리조트</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                5
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (12개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>33</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel2.webp" alt="더 아남 깜라인 호텔 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">더 아남 깜라인</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">리조트</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4.1
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (31개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>20</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel3.webp" alt="뉴 월드 푸꾸옥 리조트 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">뉴 월드 푸꾸옥 리조트</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">리조트</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4.5
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (36개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>30</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel4.webp" alt="하바나 나트랑 호텔 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">하바나 나트랑 호텔</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">호텔</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (74개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>16</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel1.webp" alt="신라 모노그램 다낭 호텔 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">신라 모노그램 다낭</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">리조트</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                5
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (12개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>33</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel2.webp" alt="더 아남 깜라인 호텔 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">더 아남 깜라인</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">리조트</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4.1
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (31개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>20</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel3.webp" alt="뉴 월드 푸꾸옥 리조트 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">뉴 월드 푸꾸옥 리조트</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">리조트</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4.5
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (36개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>30</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide item">
+                                <a class="d-flex flex-column" href="#">
+                                    <img src="./images/prod-hotel4.webp" alt="하바나 나트랑  호텔 이미지">
+                                    <div class="info d-flex flex-column">
+                                        <p class="name">하바나 나트랑 호텔</p>
+                                        <p class="d-flex align-items-center">
+                                            <span class="desc">리조트</span>
+                                            <span class="desc">5성급</span>
+                                        </p>
+                                        <p class="d-flex align-items-center gap-2 mt-2">
+                                            <span class="rating">
+                                                <span class="visually-hidden">평점 5점 만점에</span>
+                                                4
+                                            </span>
+                                            <span class="desc">
+                                                <span class="visually-hidden">리뷰 수</span>
+                                                (74개)
+                                            </span>
+                                        </p>
+                                        <p class="price">
+                                            <span class="discount"><b>16</b>% 할인</span>
+                                            <del><span class="visually-hidden">정가</span>182,915원</del>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next" aria-label="다음 슬라이드">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M0.75 12.75L6.75 6.75L0.75 0.75" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="swiper-button-prev" aria-label="이전 슬라이드">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M0.75 12.75L6.75 6.75L0.75 0.75" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 tabpanel" id="panel-hotel-cancun" role="tabpanel" aria-labelledby="tab-hotel-cancun"></div>
+                <div class="col-12 tabpanel" id="panel-hotel-spain" role="tabpanel" aria-labelledby="tab-hotel-spain"></div>
+                <div class="col-12 tabpanel" id="panel-hotel-japan" role="tabpanel" aria-labelledby="tab-hotel-japan"></div>
+                <div class="col-12 tabpanel" id="panel-hotel-hawaii" role="tabpanel" aria-labelledby="tab-hotel-hawaii"></div>
+                <div class="col-12 tabpanel" id="panel-hotel-singapore" role="tabpanel" aria-labelledby="tab-hotel-singapore"></div>
+                <div class="col-12 tabpanel" id="panel-hotel-london" role="tabpanel" aria-labelledby="tab-hotel-london"></div>
+                <div class="col-12 tabpanel" id="panel-hotel-chicago" role="tabpanel" aria-labelledby="tab-hotel-chicago"></div>
+            </div>
+        </section>
+
+        <section class="reviews container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h2>여행자들의 생생한 후기<span class="sti">Wander와 함께 만든 생생한 추억들을 확인해보세요.</span></h2>
+                </div>
+                <div class="col-12">
+                    <div class="splide" id="brand-ticker">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <a href="#">
+                                        <div class="reviewsCard d-flex flex-column">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img class="thumb" src="./images/reviews-1.webp">
+                                                <div class="info">
+                                                    <p class="name">동유럽 3국 9일-#전일정일급호텔 #프라하2연박 #3대자유시간</p>
+                                                    <p class="star" role="img" aria-label="별점 5점 만점에 4점">
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                저희는 Raphael 가이드님과 함께 바티칸 투어와 남부 투어를 진행했습니다.
+                                                처음부터 끝까지 열정적으로 안내해주시고, 늘 바쁘게 뛰어다니시며 하나라도 더 알려주시려는 모습에서 이 일을 정말 사랑하신다는 게
+                                                느껴졌습니다. 덕분에 저희도 여행 내내 자연스럽게 집중하게 되었고, 더욱 즐겁고 행복한 시간을 보낼 수 있었습니다.
+                                                특히 남부 투어 때 길이 많이 막혀 쉬시거나 개인 시간을 보내실 수도 있었을 텐데, 이동하는 시간 내내 지루하지 않도록 재미있는
+                                                이야기들을 들려주셔서 정말 즐거웠습니다. 덕분에 긴 이동 시간도 전혀 지루하지 않고 오히려 유쾌한 추억으로 남았습니다~!
+                                                남편과 둘이 이동하는 내내 “가이드님 정말 열정적이시다”라고 계속 이야기할 정도로 인상이 깊었습니다.
+                                                진심 어린 에너지와 책임감으로 여행을 특별하게 만들어주셔서 정말 감사드립니다.
+                                            </div>
+                                            <div class="user">김*한</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="splide__slide">
+                                    <a href="#">
+                                        <div class="reviewsCard d-flex flex-column">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img class="thumb" src="./images/reviews-2.webp">
+                                                <div class="info">
+                                                    <p class="name">5성스파호텔/4성숙박/알프스3봉+인터라켄2DAY </p>
+                                                    <p class="star" aria-label="별점 5점 만점에 3점">
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                동화같은 꿈을 꾼 거 같은 유럽 여행을 다녀온지도 벌써 열흘이 지나가고 있어요… 여행할 때도 즐겁고, 행복하고, 재미있었는데
+                                                다녀온 이후에도 동유럽의 아름다운 풍경들과 골목골목들의 잔상들로 계속 여행을 하고 있는 거 같아요~☺️
+                                                주로 자유여행을 하는데 유럽여행은 처음이고, 쫌 먼 느낌도 들고 은근히 겁도 나서 패키지를 알아보고 제일 마음에 들어 선택을 하게
+                                                됐는데 결론적으로는 아주 만족스런 여행이었습니다.👍
+                                            </div>
+                                            <div class="user">김*한</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="splide__slide">
+                                    <a href="#">
+                                        <div class="reviewsCard d-flex flex-column">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img class="thumb" src="./images/reviews-3.webp">
+                                                <div class="info">
+                                                    <p class="name">전통과 럭셔리의 결합, 스이란 교토 4일 #럭셔리컬렉션 #스이란교토</p>
+                                                    <p class="star" role="img" aria-label="별점 5점 만점에 4점">
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                현지인들과의 소통과 이쁜 사진을 찍어주신 태국의 찌압,언 가이드님에게 정말 감사의 말씀 드립니다. 임산부인 와이프를 꼼꼼히 신경
+                                                써주시고 조심 해야 되는 음식, 먹어도 되는 물까지 챙겨주셔서 정말 감동이었어요 신혼여행을 계획하고 있으신 신혼부부님들 임신한
+                                                와이프가 행복하고 안전한 휴양을 원하시는 분들 정말 강추 드립니다.
+                                                분명 태국이라는 나라를 갔지만 카오락은 하와이가 생각나는 지역입니다. 마지막 숙소는 푸켓으로 이동하여 태국이라는 나라도 충분히
+                                                느낄수 있는 여행이었어요.
+                                                공항 가는 길 가이드님들과 인사를 나누는데 태국의 아쉬움보다 가이드님들과의 헤어짐의 아쉬움이 더 크게 남을 정도로 너무 친절하시고
+                                                감사한 여행이었습니다.
+                                            </div>
+                                            <div class="user">김*한</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="splide__slide">
+                                    <a href="#">
+                                        <div class="reviewsCard d-flex flex-column">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img class="thumb" src="./images/reviews-4.webp">
+                                                <div class="info">
+                                                    <p class="name">프랑스 파리와 근교 북부노르망디 몽생미쉘 7일~12일</p>
+                                                    <p class="star" role="img" aria-label="별점 5점 만점에 4점">
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                부모님과의 첫 해외여행을 앞두고 전쟁 여파로 취소와 재예약을 반복하며 마음고생이 참 많았습니다.
+                                                불안한 마음에 김진숙 인솔자님과 길고 긴 첫 통화를 시작했는데, 수화기 너머 들려오는 호탕하고 친절한 목소리를 듣는 순간 걱정은
+                                                이내 무한 신뢰로 바뀌었습니다.
+                                                그때 이미 ‘이번 여행은 무조건 성공이다’라는 확신이 들었습니다. ​바티칸 오픈런으로 시작된 대장정은 현지 가이드님들의 유쾌한
+                                                입담 덕분에 내내 웃음이 끊이지 않았습니다.
+                                            </div>
+                                            <div class="user">김*한</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="splide__slide">
+                                    <a href="#">
+                                        <div class="reviewsCard d-flex flex-column">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img class="thumb" src="./images/reviews-5.webp">
+                                                <div class="info">
+                                                    <p class="name">스타가이드와 함께하는 치앙마이/치앙라이 5일</p>
+                                                    <p class="star" role="img" aria-label="별점 5점 만점에 4점">
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                일년에 한번씩 친구들과 해외 여행 기대하던 치앙마이 너무~~~좋아요 많은 사원 관광과 멋진 식당 먹는것보다 분위기가 압도적 식당만
+                                                보아도 힐링 많은 선택관광이자만 어느 하나 버릴게 없음 여러가지 선택 관광이 없었으면 밋밋 할뻔했어요 할수 있음 다하세요 ^^
+                                            </div>
+                                            <div class="user">김*한</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="splide__slide">
+                                    <a href="#">
+                                        <div class="reviewsCard d-flex flex-column">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img class="thumb" src="./images/reviews-6.webp">
+                                                <div class="info">
+                                                    <p class="name">캐나다 일주/뉴욕 12일 #로키 국립공원 #레이크 루이스 #퀘벡 관광 #나이아가라 폭포뷰
+                                                    </p>
+                                                    <p class="star" role="img" aria-label="별점 5점 만점에 4점">
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                        <span aria-hidden="true"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                미국 상황이 좋지 않고 입국절차도 까다롭다하여 걱정반 설렘반으로 떠난 여행이었다 하지만 무리없이~ 날씨까지 좋아서 멋진 추억을
+                                                만들어준 여행이 되었다 록키의 대단한 풍광을 전문적이고 노련한 김종철 가이드님을 만나 더욱 알차고 편안하게 볼 수 있어 좋았고
+                                                이어 몬트리올 퀘백 토론토 나이아가라 뉴욕 등 장시간의 여행에 지루하지 않게 써프라이즈까지 세심한 배려를 해준 김동률 가이드님
+                                                덕분에 재밌고 안전하게 시간도 짜임새 있게 잘 한것 같아 감사드립니다 나이아가라 폭뷰 뷰의 호텔은 아직도 멋진 모습 생생합니다!
+                                            </div>
+                                            <div class="user">김*한</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shorts container-fluid pb-md-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2>숏츠로 보는 추천 상품</h2>
+                </div>
+                <div class="col-12 d-flex flex-wrap tag" role="tablist">
+                    <button type="button" role="tab" aria-selected="true" class="active">#지금여기_도파민스팟</button>
+                    <button type="button" role="tab" aria-selected="false">#요즘 뜨는 여행, 인생샷</button>
+                    <button type="button" role="tab" aria-selected="false">#액티비티한 즐기는 여행</button>
+                    <button type="button" role="tab" aria-selected="false">#온가족 추억여행</button>
+                </div>
+                <div class="col-12 shorts-area">
+                    <div class="swiper shortsSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="shorts-form swiper-slide">
+                                <a href="#">
+                                    <div class="video">
+                                        <span class="ico-play">
+                                            <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path d="M1 1L12.6667 8.5L1 16V1Z" fill="white" stroke="white"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                        <img src="./images/shorts-thumb1.webp" alt="">
+                                    </div>
+                                    <div class="prod-info d-flex align-items-center">
+                                        <img src="./images/prod-shorts1.webp" alt="">
+                                        <div class="info">
+                                            <p class="name2">이탈리아 남/북부 일주 9~11일[올타임베스트] #유럽직항</p>
+                                            <p class="price"><b>2,799,000</b>원</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="shorts-form swiper-slide">
+                                <a href="#">
+                                    <div class="video">
+                                        <span class="ico-play">
+                                            <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path d="M1 1L12.6667 8.5L1 16V1Z" fill="white" stroke="white"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                        <img src="./images/shorts-thumb2.webp" alt="">
+                                    </div>
+                                    <div class="prod-info d-flex align-items-center">
+                                        <img src="./images/prod-shorts2.webp" alt="">
+                                        <div class="info">
+                                            <p class="name2">스위스/이탈리아 9일 [알프스Together]</p>
+                                            <p class="price"><b>2,799,000</b>원</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="shorts-form swiper-slide">
+                                <a href="#">
+                                    <div class="video">
+                                        <span class="ico-play">
+                                            <svg width="14" height="17" viewBox="0 0 14 17" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path d="M1 1L12.6667 8.5L1 16V1Z" fill="white" stroke="white"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                        <img src="./images/shorts-thumb3.webp" alt="">
+                                    </div>
+                                    <div class="prod-info d-flex align-items-center">
+                                        <img src="./images/prod-shorts3.webp" alt="">
+                                        <div class="info">
+                                            <p class="name2">서유럽 3국 10일(프/스/이) [NEW끌림] 천공의섬 치비타+ 파리2DAY(베르사유궁전/루브르)+융프라우
+                                            </p>
+                                            <p class="price"><b>2,799,000</b>원</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cs-noti container-fluid">
+            <div class="row col-md-12 justify-content-between flex-lg-row">
+                <div class="col-12 col-md-7 col-xl-4 noti">
+                    <div class="col-12 d-flex justify-content-between align-items-center">
+                        <h3 >알려드립니다.</h3>
+                        <a href="#" aria-label="알려드립니다. 공지사항 더보기">더보기 &gt;</a>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="col-12 d-flex flex-column align-items-start flex-md-row gap-md-4 justify-content-md-between align-items-md-center">
+                            <a href="#" title="상세 페이지 열기">[항공] 비운항에 따른 항공권 환불 및 변경 방법항공권 환불 및 변경 방법</a>
+                            <time class="d-block" datetime="2026-07-23">2026-07-23</time>
+                        </li>
+                        <li class="col-12 d-flex flex-column align-items-start flex-md-row gap-md-4 justify-content-md-between align-items-md-center">
+                            <a href="#" title="상세 페이지 열기">[당첨자 발표] 항공 오픈스타 이벤트</a>
+                            <time class="d-block" datetime="2026-07-23">2026-07-23</time>
+                        </li>
+                        <li class="col-12 d-flex flex-column align-items-start flex-md-row gap-md-4 justify-content-md-between align-items-md-center">
+                            <a href="#" title="상세 페이지 열기">[당첨자 발표] 항공 오픈스타 이벤트</a>
+                            <time class="d-block" datetime="2026-07-23">2026-07-23</time>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 d-md-none d-xl-block col-lg-4 noti">
+                    <div class="col-12 d-flex justify-content-between align-items-center">
+                        <h3>무엇을 도와 드릴까요?</h3>
+                        <a href="#" aria-label="자주 묻는 질문 더보기">더보기 &gt;</a>
+                    </div>
+                    <ul>
+                        <li class="col-12 d-flex flex-column flex-md-column align-items-md-start flex-lg-row justify-content-lg-between align-items-lg-center">
+                            <a href="#" title="상세 페이지 열기">[기타문의] 예약 시 여권 유효 기간은 얼마나 남아 있어야 하나요?</a>
+                        </li>
+                        <li class="col-12 d-flex flex-column flex-md-column align-items-md-start flex-lg-row justify-content-lg-between align-items-lg-center">
+                            <a href="#" title="상세 페이지 열기">[기타문의] 소아요금과 유아요금은 어떻게 다른가요?</a>
+                        </li>
+                        <li class="col-12 d-flex flex-column flex-md-column align-items-md-start flex-lg-row justify-content-lg-between align-items-lg-center">
+                            <a href="#" title="상세 페이지 열기">[기타문의] 주말 및 공휴일 비상 연락처를 알려주세요.</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 col-xl-3 cs">
+                    <div class="col-12">
+                        <h3>고객센터</h3>
+                    </div>
+                    <div class="col-12 d-flex flex-column flex-md-column flex-lg-row align-items-start flex-lg-column area01">
+                        <ul class="col-12 d-flex flex-column col-md-12 col-lg-12">
+                            <li>
+                                <p class="tel-1">02-3456-7890</p>
+                                <p>평일 09:00 ~ 17:00 / 주말 및 공휴일 휴무</p>
+                                <p>help@customer.co.kr</p>
+                            </li>
+                            <li class="d-flex">
+                                <a class="btn-basic align-self-start" href="#">1:1 문의하기</a>
+                            </li>
+                        </ul>
+                        <div class="col-12 d-flex flex-column col-md-12 col-lg-12 area02">
+                            <h4>기업출장 / 교육여행 단체문의</h4>
+                            <div>
+                                <p class="tel-2">02-987-3210</p>
+                                <p>평일 09:00~18:00 / 주말 및 공휴일 휴무</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </div><!-- //content-wrapper -->
+
+    <footer>
+        <div class="container-fluid inner d-flex flex-column gap-4">
+            <div
+                class="row area01 d-flex flex-column-reverse flex-md-row justify-content-md-between align-items-center">
+                <div class="col-12 d-flex flex-wrap gap-3 col-md-9 gap-lg-4">
+                    <a class="d-inline-block" href="#">회사소개</a>
+                    <a class="d-inline-block" href="#">이용약관</a>
+                    <a class="d-inline-block" href="#">개인정보처리방침</a>
+                    <a class="d-inline-block" href="#">자주 묻는 질문</a>
+                    <a class="d-inline-block" href="#">찾아오시는 길</a>
+                </div>
+                <div class="col-12 d-flex gap-4 col-md-3 justify-content-md-end align-items-center ico-sns">
+                    <a class="d-block" href="#"><span class="sns-youtube"></span></a>
+                    <a class="d-block" href="#"><span class="sns-instagram"></span></a>
+                    <a class="d-block" href="#"><span class="sns-blog"></span></a>
+                </div>
+            </div>
+            <div class="row area02">
+                <div class="col-12">
+                    <p>
+                        <span>(주)WANDER</span>
+                        <span>대표자 : 김대한</span>
+                        <span>주소 : 서울특별시 강서구 하늘길 260</span>
+                        <span>전화 : 02-6952-3455</span>
+                    </p>
+                    <p>
+                        <span>사업자등록번호 : 735-87-00581</span>
+                        <span>통신판매업신고 : 2023-서울 강남-02291호</span>
+                        <span>개인정보관리책임자 : 홍길동</span>
+                    </p>
+                    <p class="mb-4">© 2026 WANDER TRAVEL</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--맨 위로 가기 버튼-->
+    <button type="button" class="btn-up" id="scrollTopBtn" aria-label="페이지 맨 위로 이동">
+        <span class="btn ico i-up">
+            <span class="visually-hidden">맨 위로 가기</span>
+        </span>
+    </button>
+
+    <!--전체메뉴-->
+    <div class="offcanvas offcanvas-end custom-total-menu" tabindex="-1" id="responsiveMenu">
+        <div class="offcanvas-header justify-content-between align-items-center">
+            <button type="button" class="btn ico i-close" data-bs-dismiss="offcanvas" aria-label="전체 메뉴 닫기"></button>
+            <div class="d-flex gap-4">
+                <button type="button" class="btn ico i-bell">
+                    <span class="visually-hidden">알림 내역 보기</span>
+                </button>
+                <button type="button" class="btn ico i-cart">
+                    <span class="visually-hidden">장바구니</span>
+                </button>
+            </div>
+        </div>
+        <div class="flex-shrink-0">
+            <ul class="area01">
+                <li>로그인 후 다양한<br>회원 혜택을 만나보세요</li>
+                <li><a href="/" class="btn-fill">로그인 또는 회원가입하기</a></li>
+            </ul>
+            <div class="border-top my-4"></div>
+            <div class="scroll">
+                <ul class="list-unstyled area02">
+                    <li>
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#package-collapse"
+                            aria-expanded="true">
+                            여행
+                        </button>
+                        <div class="collapse area03" id="package-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li>
+                                    <a href="#" class="d-inline-flex">해외여행</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">지방출발</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">맞춤여행</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">라이브</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#hotel-collapse"
+                            aria-expanded="false">
+                            숙소
+                        </button>
+                        <div class="collapse area03" id="hotel-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li>
+                                    <a href="#" class="d-inline-flex">럭셔리 리조트</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">리조트 특가</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">일본 다이렉트</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">럭셔리 셀렉트</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="depth-1" href="#"> 에어텔</a>
+                    </li>
+                    <li>
+                        <a class="depth-1" href="#">FIT단독</a>
+                    </li>
+                    <li>
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#tour-collapse"
+                            aria-expanded="false">
+                            현지투어티켓
+                        </button>
+                        <div class="collapse area03" id="tour-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li>
+                                    <a href="#" class="d-inline-flex">유니버설 스튜디오 재팬</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">일본 버스투어 가이드</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">필수 eSIM</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">라스베가스 특가</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#tinfo-collapse"
+                            aria-expanded="false">
+                            여행정보
+                        </button>
+                        <div class="collapse area03" id="tinfo-collapse">
+                            <ul class="btn-toggle-nav list-unstyled">
+                                <li>
+                                    <a href="#" class=" d-inline-flex ">현지 날씨</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">꼭 챙겨야 할 필수품</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">유명 관광지</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-inline-flex">현지 맛집</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="border-top my-4"></div>
+                <ul class="list-unstyled area02">
+                    <li>
+                        <a class="depth-1" href="#">이벤트</a>
+                    </li>
+                    <li>
+                        <a class="depth-1" href="#">고객센터</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--모바일 검색-->
+    <div class="offcanvas offcanvas-end" id="searchSidebar">
+        <div class="offcanvas-header d-flex gap-2">
+            <button type="button" class="btn ico i-close" data-bs-dismiss="offcanvas" aria-label="검색창 닫기"></button>
+            <h5 id="search-sidebar-title">검색</h5>
+        </div>
+        <div class="offcanvas-body d-flex flex-column gap-5">
+            <div class="search-box d-flex justify-content-between align-items-center">
+                <form class="d-flex w-100 gap-2 align-items-center" role="search" action="">
+                    <input type="search" class="form-control" aria-label="Search" placeholder="검색어를 입력하세요." />
+                    <button class="btn p-0 border-0" type="submit" aria-label="검색">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path
+                                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
+                                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M21 21L16.65 16.65" stroke="black" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <div class="recent-searches">
+                <h6 id="popular-search-title">인기 검색어</h6>
+                <ul class="list-unstyled d-inline-flex flex-wrap" aria-labelledby="popular-search-title">
+                    <li><a href="#" class="text-decoration-none">#나이아가라</a></li>
+                    <li><a href="#" class="text-decoration-none">#에어텔 패키지</a></li>
+                    <li><a href="#" class="text-decoration-none">#성수기</a></li>
+                    <li><a href="#" class="text-decoration-none">#예약확인</a></li>
+                    <li><a href="#" class="text-decoration-none">#인기 여행지</a></li>
+                    <li><a href="#" class="text-decoration-none">#칸쿤 호텔</a></li>
+                    <li><a href="#" class="text-decoration-none">#가성비 패키지</a></li>
+                    <li><a href="#" class="text-decoration-none">#인도</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
