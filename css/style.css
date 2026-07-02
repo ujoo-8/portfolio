@@ -51,6 +51,7 @@ header .inner li {
 }
 header .inner li:last-child {
     font-family: 'Pretendard';
+    margin-top: 1rem;
 }
 .work-info {
     display: flex;
