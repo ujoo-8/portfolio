@@ -81,6 +81,9 @@ header .inner li:last-child {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
 }
+.work-info dl dd .br {
+    display: none;
+}
 .work-info dl dt:last-child {
     margin-left: 1.6rem;
     display: block;
@@ -633,6 +636,12 @@ sub
     .work-info {
         flex-direction: column;
         gap: 0.6rem;
+    }
+    .work-info dl dd .line {
+        display: none;
+    }
+    .work-info dl dd .br {
+        display: block;
     }
     .listSwiper .swiper-slide {
         max-width: 90% !important;
