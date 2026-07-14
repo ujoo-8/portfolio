@@ -556,7 +556,10 @@ header .area02 nav::-webkit-scrollbar {
 .offcanvas {
     padding: 1rem;
 }
-
+.offcanvas .inner {
+    width: 92%;
+    margin: 0 auto;
+}
 .offcanvas .area01 {
     padding: 3rem 1rem 1.6rem;
     margin-bottom: 0;
