@@ -350,30 +350,3 @@ if (topBtn) {
 
 
 
-
-
-
-
-
-
-
-
-// 전체메뉴, 검색창
-const menus = document.querySelectorAll('#searchSidebar, #responsiveMenu');
-const mainHeader = document.querySelector('.main-header');
-
-if (menus.length > 0 && mainHeader) {
-    // 2. forEach를 사용해 가져온 모든 메뉴에 각각 이벤트를 걸어줍니다.
-    menus.forEach(menu => {
-        // 우측 창이 열릴 때
-        menu.addEventListener('show.bs.offcanvas', () => {
-            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-            mainHeader.style.paddingRight = `${scrollbarWidth}px`;
-        });
-
-        // 우측 창이 닫힐 때
-        menu.addEventListener('hidden.bs.offcanvas', () => {
-            mainHeader.style.paddingRight = '0px';
-        });
-    });
-}
