@@ -537,7 +537,7 @@ del {
 @media (min-width: 574px) {
     .form-control::placeholder {
         color: var(--gray500) !important;
-        opacity: 0 !important;
+        opacity: 1 !important;
     }
     .form-control::-webkit-input-placeholder {
         color: var(--gray500) !important;
