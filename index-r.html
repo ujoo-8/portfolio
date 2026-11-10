@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ujoo's Work - Portfolio</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style-r.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1><a href="#" class="home">ujoo's work&nbsp;☺</a></h1>
+            <p>Welcome to my minimalist portfolio.</p>
+            <p>Photoshop, Figma, Illustrator, Visual Studio Code, HTML/CSS, Responsive, Swiper, Bootstrap.</p>
+            <p>방문해주셔서 감사합니다.</p>
+        </header>
+        <main class="container">
+            <div>
+                <img src="./images/t-6europe.webp" alt="티웨이항공 6월 유럽 현지발 프로모션 섬네일">
+                <a href="./pages/2026.html">
+                    <div class="info">2024~ 작업들</div>
+                </a>
+            </div>
+            <div>
+                <img src="./images/t-6europe.webp" alt="티웨이항공 6월 유럽 현지발 프로모션 섬네일">
+                <a href="./pages/before.html">
+                    <div class="info">이전 작업들</div>
+                </a>
+            </div>
+        </main>  
+            
+        <footer>
+            <div class="copyright">&copy; 2026 ujoo's Work</div>
+            <div class="bg-text" aria-hidden="true">PORTFOLIO</div>
+        </footer>
+    </div>
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Splide 설정 (기존 코드 유지)
+    if (document.querySelector('#work-list')) {
+        new Splide('#work-list', {
+            type       : 'loop',
+            drag       : 'free',
+            focus      : 'center',
+            autoWidth  : true,
+            gap        : '10px',
+            arrows     : false,
+            pagination : false,
+            autoScroll : { speed: 1, pauseOnHover: true, pauseOnFocus: false },
+        }).mount(window.splide.Extensions);
+    }
+
+    // 2. 탭 및 인디케이터 제어
+    const tabList = document.querySelector('.tab-container'); 
+    const tabs = document.querySelectorAll('.tab-btn');
+    const indicator = document.querySelector('.nav-indicator');
+    const contents = document.querySelectorAll('.tab-content');
+
+    function moveIndicator(element) {
+        if (!indicator || !element) return;
+        indicator.style.left = `${element.offsetLeft}px`;
+        indicator.style.width = `${element.offsetWidth}px`;
+    }
+
+    // 첫 진입 시 active 위치 잡기
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab) {
+        // 브라우저가 Pretendard 폰트와 flex 레이아웃을 완전히 그릴 시간을 0.15초(150ms) 줍니다.
+        setTimeout(() => {
+            moveIndicator(activeTab);
+        }, 150);
+    }
+
+    // 호버 및 클릭 이벤트
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('mouseenter', () => moveIndicator(tab));
+
+        tab.addEventListener('click', (e) => {
+            e.preventDefault(); // a 태그 클릭 시 새로고침/위로튀기 방지
+            
+            tabs.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+
+            moveIndicator(tab);
+
+            // 콘텐츠 전환
+            if (contents.length > 0) {
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    content.setAttribute('hidden', 'true');
+                });
+                if (contents[index]) {
+                    contents[index].classList.add('active');
+                    contents[index].removeAttribute('hidden');
+                }
+            }
+        });
+    });
+
+    // 마우스가 메뉴 전체를 벗어나면 원래 선택된 탭으로 복귀
+    if (tabList) {
+        tabList.addEventListener('mouseleave', () => {
+            const currentActive = document.querySelector('.tab-btn.active');
+            if (currentActive) moveIndicator(currentActive);
+        });
+    }
+});
+</script>
+</body>
+</html>

@@ -19,19 +19,18 @@ body {
 header {
     width: 100%;
     max-width: 144rem;
+    padding: 9rem 0 5rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 15rem 0 2rem;
-    outline: 0;
+    gap: 1.6rem;
 }
 
 header .home {
-    display: block;
+    width: fit-content;
     font-size: 2rem;
     font-family: "Lato", sans-serif;
     letter-spacing: 0.2rem;
-    margin-bottom: 1.6rem;
 }
 
 header h1 {
@@ -39,61 +38,72 @@ header h1 {
     font-family: "Lato", sans-serif;
     font-weight: 700;
 }
-
+header p {
+    font-size: 1.6rem;
+    font-family: "Pretendard", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
 header .inner {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
+.skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: "Pretendard", sans-serif;
+}
+.skills li {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    border-radius: 99rem;
+    overflow: hidden;
+}
+.skills li span {
+    display: none;
+}
+.skills li.figma {
+    background: #1c1c1c url(../images/i-figma.svg) no-repeat center / 34% auto;
+}
+.skills li.ps {
+    background:#001E36 url(../images/i-ps.svg) no-repeat center / 46% auto;
+}
+.skills li.ai {
+    background:#330000 url(../images/i-ai.svg) no-repeat center / 46% auto;
+}
+.skills li.vscode {
+    background: #fff url(../images/i-vscode.svg) no-repeat center / 60% auto;
+}
+.skills li.copilot {
+    background: #fff url(../images/i-copilot.svg) no-repeat center / 60% auto;
+}
+.skills li.cursor {
+    background: #fff url(../images/i-cursor.svg) no-repeat center / 60% auto;
+}
+.skills li.github {
+    background: #fff url(../images/i-github.svg) no-repeat center / 60% auto;
+}
+/* 
 header .inner li {
-    /* font-size: 1.7rem; */
     line-height: 1.6;
 }
 header .inner li:last-child {
     font-family: 'Pretendard';
     margin-top: 1rem;
 }
-.work-info {
-    display: flex;
-    flex-direction: row;
-    gap: 1.6rem;
-}
-.work-info dl {
-    display: flex;
-    flex-direction: row;
-}
-.work-info dt,
-.work-info dd {
-    display: inline-block;
-}
-.work-info dl dt {
-    font-weight: 500;
-    font-family: "Roboto", sans-serif;
-    white-space: nowrap;
-}
-.work-info dt::after {
-    content: ' : ';
-    display: inline-block;
-    margin-right: 0.6rem;
-    padding-left: 0.6rem;
-}
-.work-info dl dd {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-}
-.work-info dl dd .br {
-    display: none;
-}
-.work-info dl dt:last-child {
-    margin-left: 1.6rem;
-    display: block;
-    border: 1px solid;
-}
+
 header .inner .btn-area {
     display: flex;
     flex-direction: row;
     gap: 0.6rem;
-}
+} */
 .link::after {
     /* content: '↗'; */
     display: block;
@@ -198,7 +208,6 @@ header .inner .btn-area {
 /* 메인 콘텐츠 영역 (남은 공간을 다 차지함) */
 .content-wrapper {
     flex: 1;
-    /* 이 속성이 footer를 화면 맨 아래로 밀어냅니다 */
     width: 100%;
     height: 32.2rem;
     display: flex;
@@ -231,7 +240,7 @@ header .inner .btn-area {
 .splide__slide {
     position: relative;
     width: 30rem;
-    height: 36rem;
+    height: 35rem;
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -377,14 +386,18 @@ p {
     filter: blur(6px);
     -webkit-filter: blur(6px);
 }
-
-
-/* .tab-3 .item {
-    width: 34.2rem;
-    height: 16rem;
-} */
-
-
+.tab-content.active.tab-2,
+.tab-content.active.tab-3,
+.tab-content.active.tab-4 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.tab-content.active.tab-2 .item,
+.tab-content.active.tab-3 .item,
+.tab-content.active.tab-4 .item {
+    width: 100%;
+}
 
 
 
@@ -402,11 +415,9 @@ footer {
     position: relative;
     width: 100%;
     background-color: #fbf9f4;
-    padding: 5.4rem 0;
-    /* 카피라이트 텍스트 배치용 패딩 */
+    padding: 6rem 0 4rem;
     box-sizing: border-box;
     overflow: hidden;
-    /* ◀ 중요: 화면 밑으로 나간 글자 절반을 잘라버림 */
 }
 
 .copyright {
@@ -415,6 +426,11 @@ footer {
     z-index: 2;
     font-size: 1.4rem;
     margin: 0 auto;
+}
+.copyright .notice {
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+    color: #6b6b6b;
 }
 
 /* 배경에 깔리는 거대한 PORTFOLIO 텍스트 정의 */
@@ -455,6 +471,65 @@ footer {
 /*-----------------------------------------------------------------
 sub
 -----------------------------------------------------------------*/
+.work-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+}
+.work-info dl {
+    display: flex;
+    flex-direction: row;
+}
+.work-info dt,
+.work-info dd {
+    display: inline-block;
+}
+.work-info dl dt {
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    white-space: nowrap;
+}
+.work-info dt::after {
+    content: ' : ';
+    display: inline-block;
+    margin-right: 0.6rem;
+    padding-left: 0.6rem;
+}
+.work-info dl dd {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+.work-info dl dd .br {
+    display: none;
+}
+.work-info dl dt:last-child {
+    margin-left: 1.6rem;
+    display: block;
+    border: 1px solid;
+}
+header .inner .btn-area {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+}
+.link::after {
+    /* content: '↗'; */
+    display: block;
+    content: '';
+    background: url(../images/i-link.svg) no-repeat center;
+    background-size: contain;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.list::after {
+    /* content: '☰';  */
+    display: block;
+    content: '';
+    background: url(../images/i-menu-000.svg) no-repeat center;
+    background-size: contain;
+    width: 2.2rem;
+    height: 2.2rem;
+}
 .sub-content-wrapper {
     max-width: 144rem;
     margin: 3rem auto 7rem;
