@@ -481,4 +481,20 @@ footer p::before {
 	.section_info .info .stt {
 		font-size: 3vw;
 	}
+
+	footer {
+	max-width: 100%;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 3rem 2rem;
+}
+footer h3 {
+	height: 3rem;
+	text-align: left;
+	padding-top: 0;
+	padding-left: 3.4rem;
+	margin-top: 0;
+	background-position: top left;
+	background-size: 7vw;
+}
 }
