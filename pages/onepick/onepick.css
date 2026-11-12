@@ -216,7 +216,7 @@ h2 .line {
 
 h2 .point {
 	color: #b90e0e;
-	border: 0.3rem solid #b90e0e;
+	border: 0.4rem solid #b90e0e;
 	border-radius: 1.2rem;
 	padding: 0.2rem 0.6rem;
 	font-size: inherit;
@@ -265,6 +265,7 @@ h2 .point {
 	width: 44rem;
 	font-size: 2rem;
 	line-height: 1.5;
+	letter-spacing: -0.04rem;
 }
 
 .section_info .info .bold {
@@ -278,6 +279,7 @@ h2 .point {
 .section_info .info .stt {
 	color: #15524f;
 	font-size: 1.5rem;
+	letter-spacing: -0.04rem;
 	line-height: 1.5;
 	margin-top: 0.5rem;
 }
@@ -676,9 +678,10 @@ footer p::before {
 @media (max-width: 767px) {
 	h2 {
 		padding: 3rem 0 2rem;
+		background-position: bottom center;
 	}
 	h2 .line {
-		font-size: 3.5rem;
+		font-size: 4.6vw;
 	}
 	.section_info {
 		aspect-ratio: auto;
@@ -686,7 +689,7 @@ footer p::before {
 	}
 
 	.section_info .info {
-		width: 70rem;
+		width: 65rem;
 		gap: 2.6rem;
 	}
 
@@ -696,20 +699,21 @@ footer p::before {
 
 	.section_info .info dl dt {
 		width: 9rem;
-		font-size: 2.4rem;
+		font-size: 4vw;
 	}
 
 	.section_info .info dl dd {
 		width: 57rem;
-		font-size: 2.6rem;
+		font-size: 4vw;
+		letter-spacing: -0.03em;
 	}
 
 	.section_info .info .term {
-		font-size: 2.6rem;
+		font-size: 4vw;
 	}
 
 	.section_info .info .stt {
-		font-size: 2.2rem;
+		font-size: 3.5vw;
 		margin-top: 0.8rem;
 	}
 
@@ -739,7 +743,7 @@ footer p::before {
 	}
 
 	.section_vote_gate .button {
-		top: 27.9rem;
+		top: 30rem;
 	}
 
 	.section_vote_gate .button img {
@@ -974,18 +978,17 @@ footer p::before {
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
-		padding: 5rem;
+		padding: 5rem 4rem;
 	}
 
 	footer h3 {
-		font-size: 3rem;
+		font-size: 4vw;
 		text-align: left;
 		height: 5rem;
 		padding: 0 0 0 6.6rem;
 		margin-top: 0;
 		width: 100%;
-		background-size: 5.4rem 4.9rem;
-		/* 모바일에서는 아이콘을 1.33배 키움 */
+		background-size: 5.4rem 4.9rem; /* 모바일에서는 아이콘을 1.33배 키움 */
 		background-position: center left;
 		box-sizing: border-box;
 		display: flex;
@@ -993,7 +996,7 @@ footer p::before {
 	}
 
 	footer p {
-		font-size: 2.2rem;
+		font-size: 3vw;
 		line-height: 1.6;
 		margin-bottom: 1rem;
 		padding-left: 1.2rem;
