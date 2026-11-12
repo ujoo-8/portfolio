@@ -626,7 +626,7 @@ header .inner .btn-area {
         margin-top: 1rem;
     }
     .tab-container {
-        width: 50%;
+        width: 70%;
     }
     .tab-btn {
         flex: 1;
@@ -639,6 +639,11 @@ header .inner .btn-area {
     .tab-content {
         width: 92%;
     }
+    .tab-content.active.tab-2, 
+.tab-content.active.tab-3, 
+.tab-content.active.tab-4 {
+    width: 94%;
+}
     .tab-content.active {
         gap: 1.6rem;
     }
@@ -671,14 +676,14 @@ header .inner .btn-area {
     .item {
         width: 100%;
     }
-    .tab-2 .item {
+    /* .tab-2 .item {
         flex: auto;
         height: 12rem;
     }
     .tab-3 .item {
         flex: auto;
         height: 12rem;
-    }
+    } */
     .tab-content.active {
         flex-wrap:nowrap;
         flex-direction: column;
@@ -709,10 +714,27 @@ header .inner .btn-area {
 }
 
 @media (max-width:590px) {
+    .skills li {
+        width: 3rem;
+        height: 3rem;
+    }
+    .tab-container {
+        overflow-x: auto;
+    }
     header h1 {
         font-size: 3rem;
         line-height: 1.3;
     }
+    header p {
+        line-height: 1.5;
+    }
+.tab-content.active.tab-2, 
+.tab-content.active.tab-3, 
+.tab-content.active.tab-4 {
+    display: flex;
+    flex-direction: column;
+}
+
     .work-info {
         flex-direction: column;
         gap: 0.6rem;
