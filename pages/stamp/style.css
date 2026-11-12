@@ -69,6 +69,10 @@
 html {
     font-size: 62.5%;
 }
+body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
 body, section, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, strong {
 	border: none;
 	margin: 0;
@@ -107,7 +111,7 @@ picture img {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	clip: rect(1px, 1px, 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px); 
 }
 .br {
 	display: inline-block;
@@ -122,7 +126,8 @@ picture img {
     background-color: #bfe2f6;
 }
 .area01 {
-    height: 55.2rem;
+    aspect-ratio: 790 / 552;
+    overflow: hidden;
 }
 .area02 {
     background: url(./images/bg-info.webp) no-repeat center;
@@ -278,10 +283,10 @@ picture img {
 
 .area03 {
     width: 100%;
-    background: url(./images/bg-hint.webp) no-repeat center;
-    background-size: 100% 100%;
+    background: url(./images/bg-hint.webp) no-repeat center top;
+    background-size: cover;
     aspect-ratio: 790 / 699;
-    max-height: 68rem !important;
+    max-height: 68rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -346,6 +351,8 @@ picture img {
         font-size: 4vw;
     }
     .area01 {
+        aspect-ratio: auto; /* 모바일 이미지(head-mo, 790 x 585)는 자르지 않고 이미지 높이에 맡김 */
+        overflow: visible;
         height: auto;
     }
     .area02 {
@@ -456,7 +463,6 @@ picture img {
         background: url(./images/bg-hint-mo.webp) no-repeat;
         background-size: 100% 100%;
         aspect-ratio: 790 / 793;
-        /* height: auto; */
         gap: 2vw;
     }
     .area03 .cont {
@@ -483,5 +489,3 @@ picture img {
         margin: 0 auto;
     }
 }
-
-

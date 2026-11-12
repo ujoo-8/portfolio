@@ -24,18 +24,20 @@
                     <li class="cursor"><span>Cursor</span></li>
                     <li class="github"><span>GitHub</span></li>
                 </ul>
-                <ul class="tab-container" role="tablist" aria-label="포트폴리오 카테고리">
-                    <button type="button" role="tab" aria-selected="true" aria-controls="portfolio-grid" class="tab-btn active">전체</button>
-                    <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">개인 프로젝트 / 바이브 코딩</button>
-                    <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">최근 실무작업</button>
-                    <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">이전 실무작업</button>
+                <!-- aria-controls 가 탭마다 자기 패널을 가리키도록, 탭에 id 를 달아 패널의 aria-labelledby 와 연결 -->
+                <div class="tab-container" role="tablist" aria-label="포트폴리오 카테고리">
+                    <button type="button" role="tab" id="tab-all" aria-selected="true" aria-controls="work-list" class="tab-btn active">전체</button>
+                    <button type="button" role="tab" id="tab-personal" aria-selected="false" aria-controls="panel-personal" class="tab-btn">개인 프로젝트 / 바이브 코딩</button>
+                    <button type="button" role="tab" id="tab-recent" aria-selected="false" aria-controls="panel-recent" class="tab-btn">최근 실무작업</button>
+                    <button type="button" role="tab" id="tab-past" aria-selected="false" aria-controls="panel-past" class="tab-btn">이전 실무작업</button>
                     <div class="nav-indicator"></div>
-                </ul>
+                </div>
             </div>
         </header>
   
-        <main class="content-wrapper" id="portfolio-grid" role="tabpanel">
-            <div class="splide tab-content active" id="work-list" role="tabpanel" id="panel-all" aria-labelledby="tab-all">
+        
+        <main class="content-wrapper" id="portfolio-grid">
+            <div class="splide tab-content active" id="work-list" role="tabpanel" aria-labelledby="tab-all">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
@@ -95,7 +97,7 @@
                         <li class="splide__slide">
                             <img src="./images/onepick.webp" alt="겨울철 이색 온천 여행지! 나의 one pick은?">
                             <a href="./pages/k-onepick.html">
-                                <div class="info">겨울철 이색 온천 여행지! 나의 one pick은?<span>디자인 + 퍼블리싱 / Photoshop, HTML·CSS / 2018</span></div>
+                                <div class="info">겨울철 이색 온천 여행지! 나의 one pick은?<span>디자인 + 퍼블리싱 / Photoshop, HTML·CSS / 2018</span></div><!-- [수정] 2017 → 2018 : 원픽 이벤트 기간이 2018.12 ~ 2019.01 입니다 (2017 은 픽사 전시 연도) -->
                             </a>
                         </li>
                         <li class="splide__slide">
@@ -108,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="tab-content tab-2" role="tabpanel" id="panel-2026" aria-labelledby="tab-2026" hidden>
+            <div class="tab-content tab-2" role="tabpanel" id="panel-personal" aria-labelledby="tab-personal" hidden> <!-- [수정] id 를 탭 이름에 맞게 변경 (기존 panel-2026) -->
                 <div class="item">
                     <img src="./images/vibe-1.webp" alt="AI 활용한 바이브 코딩 [FLATTEN] 반응형웹 메인 화면 섬네일">
                     <a href="./pages/vibe-1.html">
@@ -129,7 +131,7 @@
                 </div>
             </div>
             
-            <div class="tab-content tab-3" role="tabpanel" id="panel-2025" aria-labelledby="tab-2025" hidden>
+            <div class="tab-content tab-3" role="tabpanel" id="panel-recent" aria-labelledby="tab-recent" hidden> <!-- [수정] 기존 panel-2025 -->
                 <!-- <div class="item">
                     <img src="./images/t-bali.webp" alt="티웨이항공 CJJ-DPS 재취항 특가 프로모션 섬네일">
                     <a href="./pages/t-bali.html">
@@ -156,18 +158,19 @@
                 </div>
             </div>
 
-            <div class="tab-content tab-4" role="tabpanel" id="panel-2024" aria-labelledby="tab-2024" hidden>
+            <div class="tab-content tab-4" role="tabpanel" id="panel-past" aria-labelledby="tab-past" hidden> <!-- [수정] 기존 panel-2024 -->
                 <div class="item">
                     <img src="./images/k-50thStamp.webp" alt="대한항공 창립 50주년 기념 프로모션 섬네일">
                     <a href="./pages/k-50thStamp.html">
-                        <div class="info">대한항공 창립 50주년 기념 프로모션<span>디자인 / Photoshop, HTML·CSS / 2019</span></div>
+                        <!-- [수정] 카드 정보를 위쪽 슬라이더와 동일하게 : "디자인" → "디자인 + 퍼블리싱" -->
+                        <div class="info">대한항공 창립 50주년 기념 프로모션<span>디자인 + 퍼블리싱 / Photoshop, HTML·CSS / 2019</span></div>
                     </a>
                 </div>
                 <div class="item">
                     <img src="./images/onepick.webp" alt="겨울철 이색 온천 여행지! 나의 one pick은?">
                     <a href="./pages/k-onepick.html">
                         <div class="info">겨울철 이색 온천 여행지! 나의 one pick은?<span>디자인 + 퍼블리싱 / Photoshop, HTML·CSS / 2018</span></div>
-                    </a>
+                    </a> 
                 </div>
                 <div class="item">
                     <img src="./images/travel_contens.webp" alt="여행 기획전 모음  섬네일">
@@ -194,7 +197,9 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     // 1. Splide 설정 (기존 코드 유지)
-    if (document.querySelector('#work-list')) {
+    // [수정] window.Splide 가 있을 때만 실행 : CDN(jsdelivr)이 차단/지연되어 Splide 를 못 불러오면
+    // 여기서 오류가 나서 아래 탭 코드까지 전부 실행되지 않았음
+    if (document.querySelector('#work-list') && window.Splide) {
         new Splide('#work-list', {
             type       : 'loop',
             drag       : 'free',
@@ -226,7 +231,15 @@
         setTimeout(() => {
             moveIndicator(activeTab);
         }, 150);
+        // [반응형] 폰트 로딩이 끝난 뒤에도 한 번 더 위치를 잡음 (느린 네트워크에서 글자 폭이 바뀌어 어긋나는 것 방지)
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => moveIndicator(document.querySelector('.tab-btn.active')));
+        }
     }
+
+    // [반응형] 창 크기 변경/태블릿 가로·세로 전환 시 인디케이터(알약) 위치와 폭을 다시 계산
+    // (기존에는 로드/호버/클릭 때만 계산해서 화면 크기가 바뀌면 선택된 탭과 어긋났음)
+    window.addEventListener('resize', () => moveIndicator(document.querySelector('.tab-btn.active')));
 
     // 호버 및 클릭 이벤트
     tabs.forEach((tab, index) => {
@@ -243,6 +256,11 @@
             tab.setAttribute('aria-selected', 'true');
 
             moveIndicator(tab);
+            // [반응형] 590px 이하에서는 탭 줄(.tab-container)이 가로 스크롤되므로, 누른 탭이 탭 줄의 가운데로 오도록 이동
+            // (scrollIntoView 는 페이지 전체를 옆으로 밀 수 있어서 탭 줄만 스크롤하도록 scrollTo 사용)
+            if (tabList && tabList.scrollWidth > tabList.clientWidth) {
+                tabList.scrollTo({ left: tab.offsetLeft - (tabList.clientWidth - tab.offsetWidth) / 2, behavior: 'smooth' });
+            }
 
             // 콘텐츠 전환
             if (contents.length > 0) {

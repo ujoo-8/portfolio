@@ -34,7 +34,10 @@
                     <dl>
                         <dt>방법</dt>
                         <dd class="pc">매일 달라지는 아래 힌트를 확인하고 <strong class="br">여행정보 사이트 내 힌트와 관련된<br>페이지 안에서 스탬프를 클릭</strong><span class="br st">(로그인 필수 / 대한항공 홈페이지 ID로 로그인 가능)</span></dd>
-                        <dd class="mobile" aria-hidden="true">매일 달라지는 아래 힌트를 <br>확인하고 <strong>여행정보 사이트 내 <br>힌트와 관련된 페이지 안에서 스탬프를 클릭</strong><span class="br st">(로그인 필수 / 대한항공 홈페이지 ID로 로그인 가능)</span></dd>
+                        <!-- [수정] aria-hidden="true" 삭제 : 모바일에서는 위 .pc 문구가 display:none 이라 이 문구가 유일한 안내인데
+                             aria-hidden 때문에 스크린리더가 모바일에서 '방법' 내용을 읽지 못했음
+                             (PC 에서는 display:none 이라 자동으로 읽히지 않으므로 aria-hidden 이 필요 없음) -->
+                        <dd class="mobile">매일 달라지는 아래 힌트를 <br>확인하고 <strong>여행정보 사이트 내 <br>힌트와 관련된 페이지 안에서 스탬프를 클릭</strong><span class="br st">(로그인 필수 / 대한항공 홈페이지 ID로 로그인 가능)</span></dd>
                     </dl>
                 </div>
 
@@ -87,11 +90,11 @@
                 <li><img src="./images/txt_hint.webp" alt="오늘의 힌트"></li>
                 <li class="hint">1972년에 개설된 미주지역 항로 도착지로서<span class="br">미서부의 중심지이자 천사의 도시인 이곳에서</span><span class="br">스탬프를 찾아보세요.</span></li>
             </ul>
-            <a class="btn" href="#" target="_blank" title="여행정보사이트 바로가기 (새 창)">
+            <a class="btn" href="#" target="_blank" rel="noopener" title="여행정보사이트 바로가기 (새 창)">
                  <picture>
                     <source media="(min-width: 768px)" srcset="images/btn.webp">
                     <source media="(max-width:767px)" srcset="images/btn-mo.webp">
-                    <img src="./images/btn.webp" alt="">
+                    <img src="./images/btn.webp" alt="여행정보사이트 바로가기">
                 </picture>
             </a>
         </section>

@@ -7,8 +7,7 @@
 @import url('https://cdn.jsdelivr.net/gh/innks/NanumSquareRound@master/nanumsquareround.min.css');
 
 html {
-	font-size: 62.5%;
-	/* 1rem = 10px */
+	font-size: 62.5%; /* 1rem = 10px */
 }
 
 /* [반응형] 태블릿: 790px 디자인을 화면폭에 맞춰 비율대로 조정 (최대 900px) */
@@ -29,8 +28,9 @@ html {
 body {
 	margin: 0;
 	font-family: 'NanumSquareRound', 'Malgun Gothic', sans-serif;
-	-webkit-text-size-adjust: 100%;
-	/* [반응형] 모바일 가로 전환 시 글자 크기가 마음대로 커지는 것 방지 */
+	-webkit-text-size-adjust: 100%; /* 모바일 가로 전환 시 글자 크기가 마음대로 커지는 것 방지 */
+	word-break: keep-all; /* 단어(띄어쓰기) 단위로 줄바꿈 */
+	overflow-wrap: break-word; /* break-word : 한 단어가 너무 길 때만 강제로 줄바꿈 */
 }
 
 body,
@@ -75,8 +75,7 @@ img {
 	margin: 0;
 	padding: 0;
 	border: none;
-	vertical-align: top;
-	/* [수정] 이미지 아래 불필요한 여백(baseline 틈) 방지 */
+	vertical-align: top; /* [수정] 이미지 아래 불필요한 여백(baseline 틈) 방지 */
 }
 
 a {
@@ -533,6 +532,7 @@ h2 .point {
 	display: flex;
 	flex-direction: column;
 	gap: 1.6rem;
+	text-align: left;
 }
 
 .wrap_result_ranking img {
@@ -647,12 +647,9 @@ footer {
 }
 
 footer h3 {
-	/* [수정] 아이콘(48 x 44)에 background-size 지정 : 
-	태블릿/모바일에서 아이콘이 글자와 겹치지 않고 같이 줄어들도록 */
 	background: url(images/ue.webp) no-repeat top center / 4.8rem 4.4rem;
 	height: 4.4rem;
-	flex: none;
-	/* [수정] 오른쪽 문구가 길어져도 아이콘 영역이 찌그러지지 않도록 */
+	flex: none; /* [수정] 오른쪽 문구가 길어져도 아이콘 영역이 찌그러지지 않도록 */
 	text-align: center;
 	padding-top: 5.6rem;
 	margin-top: 0.6rem;
@@ -723,14 +720,14 @@ footer p::before {
 	.section_info .info .stt {
 		font-size: 3.5vw;
 		margin-top: 0.8rem;
-	}
+	} 
 
 	.section_info .info .ptt {
-		font-size: 2.4rem;
+		font-size: max(12px, 2.4rem); /* max(최소값, 기존값) : 화면이 아주 작아도 이 크기보다 작아지지 않음 */
 	}
 
 	.section_info .info .ctt {
-		font-size: 2rem;
+		font-size: max(11px, 2rem);
 	}
 
 	.section_info .info .cc {
@@ -773,7 +770,7 @@ footer p::before {
 	}
 
 	.section_vote_select .round img[src*="round_1"] {
-		width: 20rem;
+		width: 31.2rem;
 	}
 
 	/* m_round_1.webp */
@@ -805,7 +802,11 @@ footer p::before {
 	}
 
 	.section_vote_select .wrap_select .onsen li:last-child {
+		/* 참고: 카드 설명은 보드(흰 영역) 안에 3줄까지만 들어가서, 글자를 키우면 아래 테두리를 넘음 → 3vw 유지 */
 		font-size: 3vw;
+		/* [수정] 설명 폭을 카드(27rem)보다 살짝 넓혀(30rem) 줄 수를 줄임 : 한글 단어 단위 줄바꿈(keep-all) 적용 후
+		   설명이 4줄이 되면서 보드 아래 테두리를 넘던 문제 (가운데 선과 보드 좌우 테두리와는 겹치지 않는 폭) */
+		width: 30rem;
 		line-height: 1.35;
 		letter-spacing: -0.06em;
 		padding-top: 1.2rem;
@@ -819,7 +820,6 @@ footer p::before {
 	.section_vote_select .wrap_select_button {
 		position: absolute;
 		top: 82.5rem;
-		/* 바닥(나무 바닥) 영역 */
 		left: 50%;
 		transform: translateX(-50%);
 		width: 76rem;
@@ -831,7 +831,7 @@ footer p::before {
 		height: 10rem;
 	}
 
-	/* m_btn_*.webp 높이 107 */
+
 
 	/* 결과 result */
 	.section_vote_result {
@@ -849,7 +849,7 @@ footer p::before {
 	}
 
 	.section_vote_result .round img[src*="round_result"] {
-		width: 20rem;
+		width: 31.2rem;
 	}
 
 	/* m_round_result.webp */
@@ -862,7 +862,7 @@ footer p::before {
 	}
 	.result_thumb {
 		width: 26rem;
-		height: 100%; /* 34.5rem */
+		height: 34.5rem;
 	}
 
 	.result_info {
@@ -875,7 +875,7 @@ footer p::before {
 	}
 
 	.result_info li:nth-child(2) {
-		font-size: 3vw;
+		font-size: max(12px, 3vw); /* 최소 12px, 기존 3vw*/
 		line-height: 1.35;
 	}
 
@@ -887,13 +887,10 @@ footer p::before {
 		width: 32.2rem;
 	}
 
-	/* m_btn_rom / m_btn_sns 322 x 83 */
-
 	.wrap_result_ranking {
 		width: 66rem;
 		padding-top: 0;
 		margin-top: 4.2rem;
-		/* 순위 제목띠가 회색 영역(m_bg3 y=570) 안으로 들어오도록 아래로 이동 */
 		gap: 2rem;
 	}
 
@@ -922,7 +919,6 @@ footer p::before {
 		margin-top: 4.4rem;
 	}
 
-	/* 보드 아래 나무 바닥(m_bg3 y=875 이후) 위에 버튼이 놓이도록 */
 	.reset-btn img {
 		height: 10.7rem;
 	}
@@ -997,7 +993,7 @@ footer p::before {
 	}
 
 	footer p {
-		font-size: 3vw;
+		font-size: max(12px, 3vw); /* [수정] 375px 에서 11.3px → 최소 12px */
 		line-height: 1.6;
 		margin-bottom: 1rem;
 		padding-left: 1.2rem;

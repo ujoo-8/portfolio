@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ujoo's Work - Portfolio</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <a href="./" class="home">ujoo's work&nbsp;☺</a>
+            <h1>Welcome to my minimalist portfolio.</h1>
+            <p>웹 디자인부터 반응형 퍼블리싱, AI 활용 바이브 코딩까지 직접 구현하는 웹 디자이너 ujoo입니다.<br>방문해주셔서 감사합니다.</p>
+            <div class="inner">
+                <ul class="skills">
+                    <li class="figma"><span>피그마</span></li>
+                    <li class="ps"><span>포토샵</span></li>
+                    <li class="ai"><span>일러스트레이터</span></li>
+                    <li class="vscode"><span>Visual Studio Code</span></li>
+                    <li class="copilot"><span>Copilot</span></li>
+                    <li class="cursor"><span>Cursor</span></li>
+                    <li class="github"><span>GitHub</span></li>
+                </ul>
+                <ul class="tab-container" role="tablist" aria-label="포트폴리오 카테고리">
+                    <button type="button" role="tab" aria-selected="true" aria-controls="portfolio-grid" class="tab-btn active">전체</button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">개인 프로젝트 / 바이브 코딩</button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">최근 실무작업</button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="portfolio-grid" class="tab-btn">이전 실무작업</button>
+                    <div class="nav-indicator"></div>
+                </ul>
+            </div>
+        </header>
+  
+        <main class="content-wrapper" id="portfolio-grid" role="tabpanel">
+            <div class="splide tab-content active" id="work-list" role="tabpanel" id="panel-all" aria-labelledby="tab-all">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img src="./images/vibe-1.webp" alt="AI 활용한 바이브 코딩 [FLATTEN] 반응형웹 메인 화면 섬네일">
+                            <a href="./pages/vibe-1.html">
+                                <div class="info">AI 활용한 바이브 코딩 [FLATTEN]<span>HTML·CSS / 2026</span></div>
+                            </a> 
+                        </li >
+                        <li class="splide__slide">
+                            <img src="./images/vibe-2.webp" alt="AI 활용한 바이브 코딩 [산리오 코리아] 반응형웹 메인 화면 섬네일">
+                            <a href="./pages/vibe-2.html">
+                                <div class="info">AI 활용한 바이브 코딩 [산리오 코리아]<span>Figma / HTML·CSS / 2026</span></div>
+                            </a>
+                        </li >
+                        <li class="splide__slide">
+                            <img src="./images/responsive-1.webp" alt="Bootstrap을 활용한 반응형웹 메인 화면 섬네일">
+                            <a href="./pages/b-temp-tour.html">
+                                <div class="info">Bootstrap을 활용한<br>반응형웹 메인<span>디자인 + 퍼블리싱 / Figma / HTML·CSS / 2026</span></div>
+                            </a>
+                        </li >
+                        <!-- <li class="splide__slide">
+                            <img src="./images/t-bali.webp" alt="티웨이항공 CJJ-DPS 재취항 특가 프로모션 섬네일">
+                            <a href="./pages/t-bali.html">
+                                <div class="info">CJJ-DPS 재취항 특가<br>프로모션</div>
+                            </a>
+                        </li> -->
+                        <li class="splide__slide">
+                            <img src="./images/t-mega.webp" alt="티웨이항공 메가 얼리버드 with SONO 프로모션 섬네일">
+                            <a href="./pages/t-mega.html">
+                                <div class="info">메가 얼리버드 with SONO 프로모션<span>디자인 / Photoshop / 2025</span></div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="./images/t-6europe.webp" alt="티웨이항공 6월 유럽 현지발 프로모션 섬네일">
+                            <a href="./pages/t-6europe.html">
+                                <div class="info">6월 유럽 현지발 프로모션<span>디자인 / Photoshop / 2025</span></div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="./images/t-yeogi.webp" alt="티웨이항공 X 여기어때 제휴 프로모션 섬네일">
+                            <a href="./pages/t-yeogi.html">
+                                <div class="info">티웨이항공 X 여기어때 제휴 프로모션<span>디자인 / Photoshop / 2024</span></div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="./images/k-50thStamp.webp" alt="대한항공 창립 50주년 기념 프로모션 섬네일">
+                            <a href="./pages/k-50thStamp.html">
+                                <div class="info">대한항공 창립 50주년 기념 프로모션<span>디자인 + 퍼블리싱 / Photoshop, HTML·CSS / 2019</span></div>
+                            </a>
+                        </li>
+                        <!-- <li class="splide__slide">
+                            <img src="./images/k-dljv.webp" alt="대한항공 X 델타항공 조인트 벤처 안내 섬네일">
+                            <a href="./pages/k-dljv.html">
+                                <div class="info">대한항공 X 델타항공<span>조인트 벤처</span></div>
+                            </a>
+                        </li> -->
+                        <li class="splide__slide">
+                            <img src="./images/onepick.webp" alt="겨울철 이색 온천 여행지! 나의 one pick은?">
+                            <a href="./pages/k-onepick.html">
+                                <div class="info">겨울철 이색 온천 여행지! 나의 one pick은?<span>디자인 + 퍼블리싱 / Photoshop, HTML·CSS / 2018</span></div>
+                            </a>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="./images/travel_contens.webp" alt="여행 기획전 모음  섬네일">
+                            <a href="./pages/travel-contents.html">
+                                <div class="info">여행 기획전 모음<span>디자인 / Photoshop / 2023~2015</span></div>
+                            </a> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content tab-2" role="tabpanel" id="panel-2026" aria-labelledby="tab-2026" hidden>
+                <div class="item">
+                    <img src="./images/vibe-1.webp" alt="AI 활용한 바이브 코딩 [FLATTEN] 반응형웹 메인 화면 섬네일">
+                    <a href="./pages/vibe-1.html">
+                        <div class="info">AI 활용한 바이브 코딩 [FLATTEN]<span>HTML·CSS / 2026</span></div>
+                    </a>    
+                </div>
+                <div class="item">
+                    <img src="./images/vibe-2.webp" alt="AI 활용한 바이브 코딩 [산리오 코리아] 반응형웹 메인 화면 섬네일">
+                    <a href="./pages/vibe-2.html">
+                        <div class="info">AI 활용한 바이브 코딩 [산리오 코리아]<span>Figma / HTML·CSS / 2026</span></div>
+                    </a>    
+                </div>
+                <div class="item">
+                    <img src="./images/responsive-1.webp" alt="Bootstrap을 활용한 반응형웹 메인 화면 섬네일">
+                    <a href="./pages/b-temp-tour.html">
+                        <div class="info">Bootstrap을 활용한<br>반응형웹 메인<span>디자인 + 퍼블리싱 / Figma / HTML·CSS / 2026</span></div>
+                    </a>    
+                </div>
+            </div>
+            
+            <div class="tab-content tab-3" role="tabpanel" id="panel-2025" aria-labelledby="tab-2025" hidden>
+                <!-- <div class="item">
+                    <img src="./images/t-bali.webp" alt="티웨이항공 CJJ-DPS 재취항 특가 프로모션 섬네일">
+                    <a href="./pages/t-bali.html">
+                        <div class="info">CJJ-DPS 재취항 특가<span>프로모션</span></div>
+                    </a>    
+                </div> -->
+                <div class="item">
+                    <img src="./images/t-mega.webp" alt="티웨이항공 메가 얼리버드 with SONO 프로모션 섬네일">
+                    <a href="./pages/t-mega.html">
+                        <div class="info">메가 얼리버드 with SONO 프로모션<span>디자인 / Photoshop / 2025</span></div>
+                    </a>
+                </div>
+                <div class="item">
+                    <img src="./images/t-6europe.webp" alt="티웨이항공 6월 유럽 현지발 프로모션 섬네일">
+                    <a href="./pages/t-6europe.html">
+                        <div class="info">6월 유럽 현지발 프로모션<span>디자인 / Photoshop / 2025</span></div>
+                    </a>   
+                </div>
+                <div class="item">
+                    <img src="./images/t-yeogi.webp" alt="티웨이항공 X 여기어때 제휴 프로모션 섬네일">
+                    <a href="./pages/t-yeogi.html">
+                        <div class="info">티웨이항공 X 여기어때 제휴 프로모션<span>디자인 / Photoshop / 2024</span></div>
+                    </a>   
+                </div>
+            </div>
+
+            <div class="tab-content tab-4" role="tabpanel" id="panel-2024" aria-labelledby="tab-2024" hidden>
+                <div class="item">
+                    <img src="./images/k-50thStamp.webp" alt="대한항공 창립 50주년 기념 프로모션 섬네일">
+                    <a href="./pages/k-50thStamp.html">
+                        <div class="info">대한항공 창립 50주년 기념 프로모션<span>디자인 / Photoshop, HTML·CSS / 2019</span></div>
+                    </a>
+                </div>
+                <div class="item">
+                    <img src="./images/onepick.webp" alt="겨울철 이색 온천 여행지! 나의 one pick은?">
+                    <a href="./pages/k-onepick.html">
+                        <div class="info">겨울철 이색 온천 여행지! 나의 one pick은?<span>디자인 + 퍼블리싱 / Photoshop, HTML·CSS / 2018</span></div>
+                    </a>
+                </div>
+                <div class="item">
+                    <img src="./images/travel_contens.webp" alt="여행 기획전 모음  섬네일">
+                    <a href="./pages/travel-contents.html">
+                        <div class="info">여행 기획전 모음<span>디자인 / Photoshop / 2023~2015</span></div>
+                    </a> 
+                </div>
+            </div>
+        </main>     
+            
+        <footer>
+            <div class="copyright">
+                <p>&copy; 2026 ujoo's Work</p>
+                <p class="notice">각 작업물의 저작권은 해당 기업에 있으며, 포트폴리오 목적으로만 게재했습니다.</p>
+            </div>
+            <div class="bg-text" aria-hidden="true">PORTFOLIO</div>
+        </footer>
+    </div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // 1. Splide 설정 (기존 코드 유지)
+    if (document.querySelector('#work-list')) {
+        new Splide('#work-list', {
+            type       : 'loop',
+            drag       : 'free',
+            focus      : 'center',
+            autoWidth  : true,
+            gap        : '10px',
+            arrows     : false,
+            pagination : false,
+            autoScroll : { speed: 1, pauseOnHover: true, pauseOnFocus: false },
+        }).mount(window.splide.Extensions);
+    }
+
+    // 2. 탭 및 인디케이터 제어
+    const tabList = document.querySelector('.tab-container'); 
+    const tabs = document.querySelectorAll('.tab-btn');
+    const indicator = document.querySelector('.nav-indicator');
+    const contents = document.querySelectorAll('.tab-content');
+
+    function moveIndicator(element) {
+        if (!indicator || !element) return;
+        indicator.style.left = `${element.offsetLeft}px`;
+        indicator.style.width = `${element.offsetWidth}px`;
+    }
+
+    // 첫 진입 시 active 위치 잡기
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab) {
+        // 브라우저가 Pretendard 폰트와 flex 레이아웃을 완전히 그릴 시간을 0.15초(150ms) 줍니다.
+        setTimeout(() => {
+            moveIndicator(activeTab);
+        }, 150);
+    }
+
+    // 호버 및 클릭 이벤트
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('mouseenter', () => moveIndicator(tab));
+
+        tab.addEventListener('click', (e) => {
+            e.preventDefault(); // a 태그 클릭 시 새로고침/위로튀기 방지
+            
+            tabs.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+
+            moveIndicator(tab);
+
+            // 콘텐츠 전환
+            if (contents.length > 0) {
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    content.setAttribute('hidden', 'true');
+                });
+                if (contents[index]) {
+                    contents[index].classList.add('active');
+                    contents[index].removeAttribute('hidden');
+                }
+            }
+        });
+    });
+
+    // 마우스가 메뉴 전체를 벗어나면 원래 선택된 탭으로 복귀
+    if (tabList) {
+        tabList.addEventListener('mouseleave', () => {
+            const currentActive = document.querySelector('.tab-btn.active');
+            if (currentActive) moveIndicator(currentActive);
+        });
+    }
+});
+</script>
+</body>
+</html>

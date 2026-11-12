@@ -1,4 +1,3 @@
-/* 1. 화면 하단 고정을 위한 기본 설정 */
 html,
 body {
     height: 100%;
@@ -9,7 +8,6 @@ body {
     background-color: #fbf9f4;
 }
 
-/* 2. Flexbox를 활용해 footer를 아래로 밀어내기 */
 #wrapper {
     display: flex;
     flex-direction: column;
@@ -102,21 +100,6 @@ header .inner {
 .skills li.github {
     background: #fff url(../images/i-github.svg) no-repeat center / 60% auto;
 }
-
-/* 
-header .inner li {
-    line-height: 1.6;
-}
-header .inner li:last-child {
-    font-family: 'Pretendard';
-    margin-top: 1rem;
-}
-
-header .inner .btn-area {
-    display: flex;
-    flex-direction: row;
-    gap: 0.6rem;
-} */
 .link::after {
     /* content: '↗'; */
     display: block;
@@ -143,9 +126,7 @@ header .inner .btn-area {
 .tab-container {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     position: relative;
-    /* 인디케이터의 기준점 */
     list-style: none;
     padding: 0;
     background-color: var(--white);
@@ -223,7 +204,9 @@ header .inner .btn-area {
 
 
 
-/* 메인 콘텐츠 영역 (남은 공간을 다 차지함) */
+/* ----------------------------------------------------------
+2. 메인 콘텐츠 영역 (남은 공간을 다 차지함)
+ ---------------------------------------------------------- */
 .content-wrapper {
     flex: 1;
     width: 100%;
@@ -310,20 +293,12 @@ header .inner .btn-area {
 
 .splide__slide:hover {
     transform: translateY(-20px);
-    /* 위로 8px 이동 */
     /* box-shadow: 0 20px 38px rgba(0, 0, 0, 0.06), 0 15px 12px rgba(0, 0, 0, 0.04); */
 }
 
 .splide__slide:hover a {
     opacity: 1;
-    /* 딤처리 레이어 등장 */
 }
-
-.splide__slide:hover .info h3,
-p {
-    transform: translateY(0);
-}
-
 .splide__slide:hover img {
     transform: scale(1.05);
     filter: blur(6px);
@@ -438,8 +413,9 @@ p {
 
 
 
-
-/* 3. 풋터 스타일 및 PORTFOLIO 글자 반만 가리기 */
+/* ----------------------------------------------------------
+3. 풋터 스타일 및 PORTFOLIO 글자 반만 가리기
+ ---------------------------------------------------------- */
 footer {
     position: relative;
     width: 100%;
@@ -468,31 +444,15 @@ footer {
     position: absolute;
     left: 50%;
     bottom: 0;
-    /* 우선 바닥에 붙이고 */
     transform: translate(-50%, 50%);
-    /* ◀ 핵심: 자기 자신 높이의 50%만큼 정확히 바닥 밑으로 내려서 숨김 */
     font-size: 18vw;
-    /* 화면 너비에 비례해 거대하게 조절 (Responsive) */
     font-weight: 900;
     letter-spacing: 2px;
     color: #f2eee5;
     z-index: 1;
     white-space: nowrap;
-    line-height: 1;
-    /* 불필요한 행간 공백 제거 */
+    line-height: 1; /* 불필요한 행간 공백 제거 */
     pointer-events: none;
-    /* 글자가 마우스 클릭을 방해하지 않도록 처리 */
-}
-
-
-
-
-
-
-
-
-.none {
-    display: none;
 }
 
 
@@ -617,7 +577,6 @@ header .inner .btn-area {
 }
 
 .listSwiper .swiper-slide {
-    /* max-width: 27.5rem !important; */
     height: auto !important;
     flex-shrink: 0 !important;
 }
@@ -730,18 +689,16 @@ header .inner .btn-area {
         width: 100%;
     }
 
+    
+    /* .tab-content.active.tab-2,
+    .tab-content.active.tab-3,
+    .tab-content.active.tab-4 {
+        grid-template-columns: repeat(2, 1fr);
+    } */
+
     .item {
         width: 100%;
     }
-
-    /* .tab-2 .item {
-        flex: auto;
-        height: 12rem;
-    }
-    .tab-3 .item {
-        flex: auto;
-        height: 12rem;
-    } */
     .tab-content.active {
         flex-wrap: nowrap;
         flex-direction: column;
@@ -821,4 +778,45 @@ header .inner .btn-area {
     }
 
 
+}
+
+/* ==========================================================================
+   [반응형] 터치 기기(휴대폰/태블릿) : 호버가 없어서 카드 제목이 한 번도 보이지 않던 문제
+   - 기존에는 마우스를 올려야(:hover) 어두운 막과 제목이 나타났기 때문에, 터치 화면에서는 제목을 볼 방법이 없었음
+   - hover 가 없는 기기에서는 카드 아래쪽에 제목을 항상 표시하고, 호버용 이동/블러 효과는 끔
+   ========================================================================== */
+@media (hover: none) {
+    .splide__slide a,
+    .item a {
+        opacity: 1;
+        align-items: flex-end;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0) 62%);
+    }
+
+    .splide__slide .info,
+    .item .info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1.6rem 1.8rem;
+        gap: 0.6rem;
+        font-size: 1.6rem;
+        line-height: 1.35;
+    }
+
+    .splide__slide .info>span,
+    .item .info>span {
+        font-size: 1.2rem;
+    }
+
+    .splide__slide:hover,
+    .item:hover {
+        transform: none;
+    }
+
+    .splide__slide:hover img,
+    .item:hover img {
+        transform: none;
+        filter: none;
+        -webkit-filter: none;
+    }
 }
