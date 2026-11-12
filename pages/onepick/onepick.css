@@ -415,7 +415,6 @@ h2 .point {
 	color: #5d5d5d;
 	font-size: 1.6rem;
 	line-height: 2rem;
-	letter-spacing: -0.06em;
 	padding-top: 2rem;
 }
 
@@ -470,7 +469,7 @@ h2 .point {
 	height: auto;
 }
 
-.section_vote_result .wrap_result {
+.wrap_result {
 	width: 54.8rem;
 	text-align: left;
 	display: flex;
@@ -479,13 +478,20 @@ h2 .point {
 	gap: 4.6rem;
 }
 
-.section_vote_result .wrap_result>img,
-.section_vote_result .wrap_result picture img {
-	width: 21rem;
-	height: auto;
+.result_thumb {
+	width: 20.6rem;
+	height: 25.4rem;
+	border-radius: 3rem;
+	overflow: hidden;
+}
+.result_thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .result_info {
+	width:29.6rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1.4rem;
@@ -494,7 +500,7 @@ h2 .point {
 .result_info li:nth-child(1) {
 	color: #000;
 	font-size: 2.6rem;
-	font-weight: 600;
+	font-weight: bold;
 	line-height: 1.6;
 	border-bottom: 0.2rem #17284b solid;
 }
@@ -507,7 +513,6 @@ h2 .point {
 }
 
 .result_info li:nth-child(3) {
-	margin-bottom: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 0.6rem;
@@ -770,7 +775,7 @@ footer p::before {
 
 	/* m_round_1.webp */
 	.section_vote_select p {
-		font-size: 2.6rem;
+		font-size: 3.5vw;
 		line-height: 1.5;
 		padding: 1.8rem 0 2.5rem;
 	}
@@ -795,12 +800,12 @@ footer p::before {
 
 	/* m_img_*.webp 260 x 345 */
 	.section_vote_select .wrap_select .onsen li:first-child {
-		font-size: 2.6rem;
+		font-size: 3.5vw;
 		padding-bottom: 1rem;
 	}
 
 	.section_vote_select .wrap_select .onsen li:last-child {
-		font-size: 2.2rem;
+		font-size: 3vw;
 		line-height: 1.35;
 		padding-top: 1.2rem;
 	}
@@ -849,20 +854,15 @@ footer p::before {
 	/* m_round_result.webp */
 	.section_vote_result .wrap_result {
 		width: 66rem;
-		gap: 3.6rem;
+		gap: 4rem;
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
 	}
 	.result_thumb {
 		width: 26rem;
+		height: 100%; /* 34.5rem */
 	}
-	.result_thumb img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
 
 	.result_info {
 		width: 32.2rem;
@@ -870,12 +870,12 @@ footer p::before {
 	}
 
 	.result_info li:nth-child(1) {
-		font-size: 3rem;
+		font-size: 4vw;
 	}
 
 	.result_info li:nth-child(2) {
-		font-size: 2.2rem;
-		line-height: 1.5;
+		font-size: 3vw;
+		line-height: 1.35;
 	}
 
 	.result_info li:nth-child(3) {
@@ -903,6 +903,7 @@ footer p::before {
 	/* m_ti_rk.webp 629 x 52 */
 	.wrap_result_ranking div {
 		padding-left: 0;
+		gap: 3vw;
 	}
 
 	.wrap_result_ranking div ul {
@@ -913,12 +914,11 @@ footer p::before {
 		font-size: 2.4rem;
 		padding-left: 4.6rem;
 		box-sizing: border-box;
-		width: 33rem;
-		margin-bottom: 0.5rem;
+		width: fit-content;
 	}
 
 	.reset-btn {
-		margin-top: 5.8rem;
+		margin-top: 4.4rem;
 	}
 
 	/* 보드 아래 나무 바닥(m_bg3 y=875 이후) 위에 버튼이 놓이도록 */
