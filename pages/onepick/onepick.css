@@ -312,7 +312,7 @@ h2 .point {
    시작 버튼 영역 (vote_gate)
    -------------------------------------------------------------------------- */
 .section_vote_gate {
-	background: url(images/bg_gate.webp) no-repeat top center / 100% auto;
+	background: url(images/bg1.webp) no-repeat top center / 100% auto;
 	width: 100%;
 	max-width: 79rem;
 	aspect-ratio: 790 / 657;
@@ -324,14 +324,14 @@ h2 .point {
 	width: 43.1rem;
 	aspect-ratio: 431 / 117;
 	position: absolute;
-	top: 24.5%;
+	top: 21%;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
 .section_vote_gate .button {
 	position: absolute;
-	top: 53%;
+	top: 50%;
 	left: 50%;
 	transform: translateX(-50%);
 	display: block;
@@ -347,7 +347,7 @@ h2 .point {
    투표 선택 화면 (vote_select)  ※ op_select.html
    -------------------------------------------------------------------------- */
 .section_vote_select {
-	background: url(images/bg_select.webp) no-repeat top center / 100% auto;
+	background: url(images/bg2.webp) no-repeat top center / 100% auto;
 	width: 100%;
 	max-width: 79rem;
 	aspect-ratio: 790 / 770;
@@ -450,7 +450,7 @@ h2 .point {
    결과 화면 (vote_result)  ※ op_result.html
    -------------------------------------------------------------------------- */
 .section_vote_result {
-	background: url(images/bg_result.webp) no-repeat top center / 100% auto;
+	background: url(images/bg3.webp) no-repeat top center / 100% auto;
 	aspect-ratio: 790 / 831;
 	width: 100%;
 	max-width: 79rem;
@@ -740,15 +740,21 @@ footer p::before {
 	/* 시작 버튼 영역: m_bg1.webp (790 x 640) 에는 제목 이미지가 이미 들어 있으므로 ti_vote 는 사용하지 않음 */
 	.section_vote_gate {
 		background-image: url(images/m_bg1.webp);
-		aspect-ratio: 790 / 640;
+		aspect-ratio: 790 / 840;
 	}
 
 	.section_vote_gate h3 {
-		background: none;
+		background: url(images/m_ti_vote.webp) no-repeat center / 100% 100%;
+	width: 52.5rem;
+	aspect-ratio: 525 / 141;
+	position: absolute;
+	top: 21%;
+	left: 50%;
+	transform: translateX(-50%);
 	}
 
 	.section_vote_gate .button {
-		top: 30rem;
+		top: 39rem;
 	}
 
 	.section_vote_gate .button img {
@@ -802,10 +808,7 @@ footer p::before {
 	}
 
 	.section_vote_select .wrap_select .onsen li:last-child {
-		/* 참고: 카드 설명은 보드(흰 영역) 안에 3줄까지만 들어가서, 글자를 키우면 아래 테두리를 넘음 → 3vw 유지 */
 		font-size: 3vw;
-		/* [수정] 설명 폭을 카드(27rem)보다 살짝 넓혀(30rem) 줄 수를 줄임 : 한글 단어 단위 줄바꿈(keep-all) 적용 후
-		   설명이 4줄이 되면서 보드 아래 테두리를 넘던 문제 (가운데 선과 보드 좌우 테두리와는 겹치지 않는 폭) */
 		width: 30rem;
 		line-height: 1.35;
 		letter-spacing: -0.06em;
